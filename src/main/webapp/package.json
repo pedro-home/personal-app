@@ -1,0 +1,19 @@
+{
+  "name": "workspace",
+  "version": "1.0.0",
+  "description": "All clientside code",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "portfolio-workspace"
+  },
+  "author": "pedro.gomes",
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^2.7.2",
+    "webpack": "^4.0.1"
+  }
+}
