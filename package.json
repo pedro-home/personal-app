@@ -1,5 +1,5 @@
 {
-  "name": "portfolio-workspace",
+  "name": "portfolio-application",
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
@@ -12,7 +12,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "portfolio-workspace"
+    "url": "portfolio-application"
   },
   "author": "pedro.gomes",
   "private": true,
