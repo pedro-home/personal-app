@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { WorkspaceHeaderComponent } from './workspace-header/workspace-header.component';
+import { ButtonComponent } from '../button/button.component';
 
 @Component({
   selector: 'app-workspace',
@@ -7,9 +9,28 @@ import { Component, OnInit } from '@angular/core';
 })
 export class WorkspaceComponent implements OnInit {
 
-  constructor() { }
+  header: WorkspaceHeaderComponent;
+  options: object;
+  
+  constructor()
+  {
+	this.options = {
+		header: [
+			{
+
+			}
+		],
+
+		footer: [
+			{
+
+			}
+		]
+	};
+  }
 
   ngOnInit() {
+	this.header = new WorkspaceHeaderComponent(this.options.header);
   }
 
 }

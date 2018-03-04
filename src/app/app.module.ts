@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { MatCardModule } from '@angular/material';
+
+import { WorkspaceModule } from './workspace/workspace.module';
 
 import { AppComponent } from './app.component';
 
@@ -13,8 +14,8 @@ import { AppComponent } from './app.component';
 	// Browser
 	BrowserModule,
 
-	// Material
-	MatCardModule
+	// Workspace
+	WorkspaceModule
 
   ],
   providers: [],
