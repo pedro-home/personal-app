@@ -1,36 +1,45 @@
 import { Component, OnInit } from '@angular/core';
 import { WorkspaceHeaderComponent } from './workspace-header/workspace-header.component';
-import { ButtonComponent } from '../button/button.component';
 
 @Component({
-  selector: 'app-workspace',
-  templateUrl: './workspace.component.html',
-  styleUrls: ['./workspace.component.scss']
+	selector: 'app-workspace',
+	templateUrl: './workspace.component.html',
+	styleUrls: ['./workspace.component.scss']
 })
+
 export class WorkspaceComponent implements OnInit {
 
-  header: WorkspaceHeaderComponent;
-  options: object;
+	header: WorkspaceHeaderComponent;
+	options: object;
   
-  constructor()
-  {
-	this.options = {
-		header: [
-			{
+	constructor()
+	{
+		this.options = {
+			header: [
+				{
+					name: 'Home'
+				},
+				{
+					name: 'About me'
+				},
+				{
+					name: 'Projects'
+				},
+				{
+					name: 'Contacts'
+				}
+			],
 
-			}
-		],
+			footer: [
+				{
 
-		footer: [
-			{
+				}
+			]
+		};
+	}
 
-			}
-		]
-	};
-  }
-
-  ngOnInit() {
-	this.header = new WorkspaceHeaderComponent(this.options.header);
-  }
+	ngOnInit() {
+		// this.header = new WorkspaceHeaderComponent(this.options['header']);
+	}
 
 }
