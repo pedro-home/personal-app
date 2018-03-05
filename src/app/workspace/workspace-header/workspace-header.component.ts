@@ -6,14 +6,10 @@ import { Component, OnInit } from '@angular/core';
 	styleUrls: ['./workspace-header.component.scss']
 })
 export class WorkspaceHeaderComponent implements OnInit {
-	options: object;
-
-	constructor(options: object) {
-		this.options = options;
+	constructor() {
 	}
 
 	ngOnInit() {
-
 	}
 
 }
