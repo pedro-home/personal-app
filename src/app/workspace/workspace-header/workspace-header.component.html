@@ -1,5 +1,5 @@
 <mat-toolbar>
-	<mat-toolbar-row>
-		<span>value</span>
+	<mat-toolbar-row ng-repeat="let option in getToolbar()">
+		<span>option.name</span>
 	</mat-toolbar-row>
 </mat-toolbar>
