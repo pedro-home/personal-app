@@ -7,8 +7,7 @@ import { WorkspaceComponent } from './workspace/workspace.component';
 	styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-	private workspace: WorkspaceComponent;
 	constructor() {
-		this.workspace = new WorkspaceComponent();
+
 	}
 }

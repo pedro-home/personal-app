@@ -7,12 +7,12 @@ import { AppComponent } from './app.component';
 
 @NgModule({
   declarations: [
-	  AppComponent
+    AppComponent
   ],
   imports: [
 
 	// Browser
-	BrowserModule,
+  BrowserModule,
 
 	// Workspace
 	WorkspaceModule

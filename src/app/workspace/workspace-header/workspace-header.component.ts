@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { WorkspaceHeaderService } from './workspace-header.service';
-import { WorkspaceHeaderModel } from './workspace-header.model';
 
 @Component({
 	selector: 'app-workspace-header',
@@ -9,23 +8,40 @@ import { WorkspaceHeaderModel } from './workspace-header.model';
 	providers: [WorkspaceHeaderService]
 })
 export class WorkspaceHeaderComponent implements OnInit {
-	private model: WorkspaceHeaderModel;
+	private header: WorkspaceHeader;
 	
 	constructor(private whService: WorkspaceHeaderService) {
-		this.model = new WorkspaceHeaderModel();
-	}
-
-	getToolbar(index?: number) {
-		let toolbar = this.model.toolbar;
-		if (index)
-		{
-			return toolbar[index];
-		}
-
-		return toolbar;
+		this.header = new WorkspaceHeader();
 	}
 
 	ngOnInit() {
 	}
 
 }
+class WorkspaceHeader {
+	private data: Object;
+
+	constructor() {
+		this.data = {
+			toolbar: [
+				{
+					icon: 'favorite'
+				},
+				{
+					name: 'About me'
+				},
+				{
+					name: 'Projects'
+				},
+				{
+					name: 'Contacts'
+				}
+			]
+		};
+	}
+
+	public get toolbar(): Array<JSON> {
+		return this.data['toolbar'];
+	}
+}
+
