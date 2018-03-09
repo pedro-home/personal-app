@@ -1,14 +1,9 @@
 <mat-toolbar>
-	<mat-toolbar-row>
-		<ng-container *ngFor="let option of header.toolbar">
-			<button *ngIf="option.name; else buttonIcon" mat-button>
-				<span>{{ option.name }}</span>
-			</button>
-			<ng-template #buttonIcon>
-				<button mat-icon-button>
-					<mat-icon>{{ option.icon }}</mat-icon>
-				</button>
-			</ng-template>
-		</ng-container>
-	</mat-toolbar-row>
+	<button mat-icon-button>
+		<mat-icon>{{ header.home }}</mat-icon>
+	</button>
+	<span class="mat-toolbar-spacer"></span>
+	<button *ngFor="let option of header.toolbar" mat-button>
+		<span>{{ option.text }}</span>
+	</button>
 </mat-toolbar>
