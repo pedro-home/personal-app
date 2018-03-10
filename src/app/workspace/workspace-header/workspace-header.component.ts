@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { Http } from '@angular/http';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
 	selector: 'app-workspace-header',
@@ -7,32 +6,28 @@ import { Http } from '@angular/http';
 	styleUrls: ['./workspace-header.component.scss']
 })
 export class WorkspaceHeaderComponent implements OnInit {
-	private header: WorkspaceHeader;
-	private data;
+
+	@Input()
+	private data: WorkspaceHeader;
 	
-	constructor(private http:Http) {
-		this.http.get('./assets/messages/workspace/header.json')
-		.subscribe(res => this.header = new WorkspaceHeader(res.json()));
-	}
+	constructor() { }
 
-	ngOnInit() {
-
-	}
+	ngOnInit() { }
 
 }
-class WorkspaceHeader {
-	private data: JSON;
+export class WorkspaceHeader {
+	private model: JSON;
 
 	constructor(data: JSON) {
-		this.data = data;
+		this.model = data;
 	}
 
-	public get toolbar(): Array<JSON> {
-		return this.data['toolbar'];
+	public get buttons(): Array<JSON> {
+		return this.model['buttons'];
 	}
 
 	public get home(): string {
-		return this.data['home'];
+		return this.model['home'];
 	}
 }
 

@@ -1,9 +1,9 @@
 <mat-toolbar>
 	<button mat-icon-button>
-		<mat-icon>{{ header.home }}</mat-icon>
+		<mat-icon>{{ data.home }}</mat-icon>
 	</button>
 	<span class="mat-toolbar-spacer"></span>
-	<button *ngFor="let option of header.toolbar" mat-button>
+	<button *ngFor="let option of data.buttons" mat-button>
 		<span>{{ option.text }}</span>
 	</button>
 </mat-toolbar>

@@ -1,15 +1,29 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
-  selector: 'app-workspace-footer',
-  templateUrl: './workspace-footer.component.html',
-  styleUrls: ['./workspace-footer.component.scss']
+	selector: 'app-workspace-footer',
+	templateUrl: './workspace-footer.component.html',
+	styleUrls: ['./workspace-footer.component.scss']
 })
 export class WorkspaceFooterComponent implements OnInit {
 
-  constructor() { }
+	@Input()
+	private data: WorkspaceFooter;
 
-  ngOnInit() {
-  }
+	constructor() { }
 
+	ngOnInit() {
+	}
+}
+export class WorkspaceFooter {
+	private model: JSON;
+
+	constructor(data: JSON) {
+		this.model = data;
+	}
+	
+	public get version()
+	{
+		return this.model['version'];
+	}
 }
