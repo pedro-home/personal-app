@@ -22,8 +22,13 @@ export class WorkspaceFooter {
 		this.model = data;
 	}
 	
-	public get version()
+	public get version(): string
 	{
 		return this.model['version'];
+	}
+
+	public get author(): string
+	{
+		return this.model['author'];
 	}
 }
