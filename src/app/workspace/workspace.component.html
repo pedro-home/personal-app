@@ -1,5 +1,9 @@
-<app-workspace-header></app-workspace-header>
+<app-workspace-header *ngIf="header; else loading" [data]="header"></app-workspace-header>
 <div class="mat-workspace-content">
 
 </div>
-<app-workspace-footer></app-workspace-footer>
+<app-workspace-footer *ngIf="footer; else loading" [data]="footer"></app-workspace-footer>
+
+<ng-template #loading>
+    <app-workspace-loader></app-workspace-loader>
+</ng-template>
