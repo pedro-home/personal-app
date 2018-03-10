@@ -1,0 +1,19 @@
+{
+    "header": {
+        "home": "home",
+        "buttons": [
+            {
+                "text": "About me"
+            },
+            {
+                "text": "Projects"
+            },
+            {
+                "text": "Contacts"
+            }
+        ]
+    },
+    "footer": {
+        "version": "v0.0.1"
+    }
+}
