@@ -16,11 +16,8 @@ export class WorkspaceHeaderComponent implements OnInit {
 
 }
 export class WorkspaceHeader {
-	private model: JSON;
 
-	constructor(data: JSON) {
-		this.model = data;
-	}
+	constructor(private model: JSON) { }
 
 	public get buttons(): Array<JSON> {
 		return this.model['buttons'];

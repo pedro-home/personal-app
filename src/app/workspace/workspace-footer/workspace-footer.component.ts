@@ -16,11 +16,8 @@ export class WorkspaceFooterComponent implements OnInit {
 	}
 }
 export class WorkspaceFooter {
-	private model: JSON;
 
-	constructor(data: JSON) {
-		this.model = data;
-	}
+	constructor(private model: JSON) { }
 	
 	public get version(): string
 	{
