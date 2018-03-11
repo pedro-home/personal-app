@@ -10,14 +10,15 @@ import { WorkspaceComponent } from './workspace.component';
 import { WorkspaceHeaderComponent } from './workspace-header/workspace-header.component';
 import { WorkspaceFooterComponent } from './workspace-footer/workspace-footer.component';
 import { WorkspacePageComponent } from './workspace-page/workspace-page.component';
-import { WorkspaceLoaderComponent } from './workspace-loader/workspace-loader.component';
 import { WorkspaceDialogComponent } from './workspace-dialog/workspace-dialog.component';
+import { WorkspaceLoaderComponent } from './workspace-loader/workspace-loader.component';
 
 @NgModule({
 	imports: [
 		BrowserAnimationsModule,
 		CommonModule,
 		HttpModule,
+		BlockUIModule,
 
 		// Material
 		MatToolbarModule,
