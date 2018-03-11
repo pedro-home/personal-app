@@ -3,13 +3,16 @@
         "home": "home",
         "buttons": [
             {
-                "text": "About me"
+                "text": "About me",
+                "action": "page:aboutme"
             },
             {
-                "text": "Projects"
+                "text": "Projects",
+                "action": "page:projects"
             },
             {
-                "text": "Contacts"
+                "text": "Contacts",
+                "action": "page:contacts"
             }
         ]
     },

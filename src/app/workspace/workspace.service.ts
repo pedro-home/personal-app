@@ -20,7 +20,7 @@ class MessageService {
 	}
 
 	public processMessage(path: string): any {
-		return this.http.get(`${MessageService.MESSAGE_PATH}/${path}`);
+		return this.http.get(`${MessageService.MESSAGE_PATH}/${path}`, '{responseType: "text"}');
 	}
 }
 

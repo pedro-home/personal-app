@@ -19,11 +19,15 @@ export class WorkspaceComponent implements OnInit, AfterContentInit {
 	private footer: WorkspaceFooter;
 	private loader: WorkspaceLoader;
 	private currentPage: WorkspacePage;
+	private loadedPages: JSON;
 
-	private isLoading: boolean;
+	private isLoading: boolean
+	private isLoadingWorkspace: boolean
+	private isLoadingPage: boolean;
 
 	constructor(private workspaceService: WorkspaceService) {
-		this.isLoading = true;
+		this.isLoading = this.isLoadingWorkspace = this.isLoadingPage = true;
+		this.loadedPages = <JSON> {};
 	}
 
 	ngOnInit() {
@@ -33,6 +37,7 @@ export class WorkspaceComponent implements OnInit, AfterContentInit {
 	ngAfterContentInit(): void {
 		setTimeout(()=>{
 			this.loadWorkspace();
+			this.loadPage('home');
 		}, 2500);
 	}
 
@@ -45,15 +50,32 @@ export class WorkspaceComponent implements OnInit, AfterContentInit {
 			this.header = new WorkspaceHeader(json['header']);
 			this.footer = new WorkspaceFooter(json['footer']);
 
-			this.isLoading = false;
+			this.isLoadingWorkspace = false;
+			this.isLoading = this.isLoadingPage;
 		});
 	}
 
 	private loadPage(pageId: string): void {
-		this.workspaceService.message.processMessage(`pages/${pageId}/home.json`)
+
+		let page = this.loadedPages[pageId];
+		if (page)
+		{
+			// Already in cache
+			this.currentPage = page;
+			return;
+		}
+
+		this.workspaceService.message.processMessage(`pages/${pageId}.html`)
 		.subscribe(message => {
-			let json = message.json();
-			this.currentPage = new WorkspacePage();
+			this.loadedPages[pageId] = new WorkspacePage(message.text());
+			this.currentPage = this.loadedPages[pageId];
+
+			this.isLoadingPage = false;
+			this.isLoading = this.isLoadingWorkspace;
 		});
+	}
+
+	private receiveAction($event) {
+		this.loadPage($event);
 	}
 }

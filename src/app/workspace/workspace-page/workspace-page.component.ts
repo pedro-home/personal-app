@@ -17,7 +17,11 @@ export class WorkspacePageComponent implements OnInit {
 
 export class WorkspacePage {
 	
-	constructor() {
+	constructor(private template: string) {
 		
+	}
+
+	public get html(): string {
+		return this.template;
 	}
 }

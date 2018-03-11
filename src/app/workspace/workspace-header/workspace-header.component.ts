@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
 	selector: 'app-workspace-header',
@@ -9,11 +9,23 @@ export class WorkspaceHeaderComponent implements OnInit {
 
 	@Input()
 	private data: WorkspaceHeader;
+
+	@Output()
+	private actionEvent = new EventEmitter<string>();
 	
 	constructor() { }
 
 	ngOnInit() { }
 
+	public executeAction(name: string) {
+		let type = name.match(/^.+(?=:)/g)[0];
+		name = name.replace(`${type}:`, '');
+
+		if (type === 'page')
+		{
+			this.actionEvent.emit(name);
+		}
+	}
 }
 export class WorkspaceHeader {
 
