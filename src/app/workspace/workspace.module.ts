@@ -1,10 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpModule } from '@angular/http';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { MatToolbarModule, MatButtonModule, MatIconModule, MatProgressSpinnerModule, MatDialogModule } from '@angular/material';
-import { BlockUIModule } from 'ng-block-ui';
 
 import { WorkspaceComponent } from './workspace.component';
 import { WorkspaceHeaderComponent } from './workspace-header/workspace-header.component';
@@ -15,10 +13,8 @@ import { WorkspaceLoaderComponent } from './workspace-loader/workspace-loader.co
 
 @NgModule({
 	imports: [
-		BrowserAnimationsModule,
 		CommonModule,
 		HttpModule,
-		BlockUIModule,
 
 		// Material
 		MatToolbarModule,
@@ -37,6 +33,6 @@ import { WorkspaceLoaderComponent } from './workspace-loader/workspace-loader.co
 		WorkspaceDialogComponent,
 		WorkspaceLoaderComponent
 	],
-	entryComponents: [WorkspaceLoaderComponent]
+	entryComponents: []
 })
 export class WorkspaceModule { }

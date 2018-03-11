@@ -8,21 +8,17 @@ import { Component, OnInit, Input } from '@angular/core';
 export class WorkspaceLoaderComponent implements OnInit {
 
 	@Input()
-	private loader: WorkspaceLoader;
+	private data: WorkspaceLoader;
 
-	constructor() {
-
-	}
+	constructor() { }
 
 	ngOnInit() { }
 }
 
 export class WorkspaceLoader {
 	private text: string;
-	public loading: boolean;
 
 	constructor(text?: string) {
-		this.loading = false;
 		this.text = text || 'Loading Resources...';
 	}
 

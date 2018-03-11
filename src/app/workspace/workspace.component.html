@@ -1,7 +1,12 @@
-<block-ui [template]="loaderComponent">
-    <app-workspace-header *ngIf="header" [data]="header"></app-workspace-header>
-    <div class="mat-workspace-content">
 
-    </div>
-    <app-workspace-footer *ngIf="footer" [data]="footer"></app-workspace-footer>
-</block-ui>
+<ng-container *ngIf="isLoading; then loaderTemplate; else workspaceTemplate"></ng-container>
+
+<ng-template #workspaceTemplate>
+    <app-workspace-header [data]="header"></app-workspace-header>
+    <app-workspace-page [data]="currentPage" class="mat-workspace-content"></app-workspace-page>
+    <app-workspace-footer [data]="footer"></app-workspace-footer>
+</ng-template>
+
+<ng-template #loaderTemplate>
+    <app-workspace-loader *ngIf="loader" [data]="loader"></app-workspace-loader>
+</ng-template>

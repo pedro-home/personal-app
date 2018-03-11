@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { WorkspaceModule } from './workspace/workspace.module';
 
 import { AppComponent } from './app.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -13,6 +14,7 @@ import { AppComponent } from './app.component';
 
 	// Browser
   BrowserModule,
+  BrowserAnimationsModule,
 
 	// Workspace
 	WorkspaceModule
