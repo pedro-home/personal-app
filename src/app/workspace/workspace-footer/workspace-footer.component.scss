@@ -1,3 +1,5 @@
-mat-toolbar.mat-toolbar-size-small {
-    height: 32px;
+mat-toolbar {
+    &.mat-toolbar-size-small {
+        height: 32px;
+    }
 }
