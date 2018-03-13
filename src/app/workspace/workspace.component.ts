@@ -21,7 +21,7 @@ export class WorkspaceComponent implements OnInit, AfterContentInit {
 	private currentPage: WorkspacePage;
 	private loadedPages: JSON;
 
-	private isLoading: boolean
+	isLoading: boolean
 	private isLoadingWorkspace: boolean
 	private isLoadingPage: boolean;
 

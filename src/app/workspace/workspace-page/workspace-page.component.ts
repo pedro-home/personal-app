@@ -8,7 +8,7 @@ import { Component, OnInit, Input } from '@angular/core';
 export class WorkspacePageComponent implements OnInit {
 
 	@Input()
-	private data: WorkspacePage;
+	data: WorkspacePage;
 
 	constructor() { }
 

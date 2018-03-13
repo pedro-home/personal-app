@@ -8,7 +8,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 export class WorkspaceHeaderComponent implements OnInit {
 
 	@Input()
-	private data: WorkspaceHeader;
+	data: WorkspaceHeader;
 
 	@Output()
 	private actionEvent = new EventEmitter<string>();
