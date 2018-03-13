@@ -12,5 +12,5 @@ $theme: mat-dark-theme($primary, $accent, $warn);
 //Angular theming components
 
 .mat-icon {
-    color: mat-color($accent);
+    color: mat-color($primary);
 }
