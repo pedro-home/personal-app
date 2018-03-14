@@ -3,7 +3,7 @@
 
 <ng-template #workspaceTemplate>
     <app-workspace-header (actionEvent)="receiveAction($event)" [data]="header"></app-workspace-header>
-    <app-workspace-page [data]="currentPage" class="mat-workspace-content"></app-workspace-page>
+    <app-workspace-page [data]="currentPage"></app-workspace-page>
     <app-workspace-footer [data]="footer"></app-workspace-footer>
 </ng-template>
 
