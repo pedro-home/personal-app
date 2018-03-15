@@ -1,31 +1,24 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { BaseComponent, BaseModel } from '../base/base.component';
 
 @Component({
 	selector: 'app-workspace-footer',
 	templateUrl: './workspace-footer.component.html',
 	styleUrls: ['./workspace-footer.component.scss']
 })
-export class WorkspaceFooterComponent implements OnInit {
+export class WorkspaceFooterComponent extends BaseComponent<WorkspaceFooter> {
 
-	@Input()
-	data: WorkspaceFooter;
-
-	constructor() { }
-
-	ngOnInit() {
-	}
 }
-export class WorkspaceFooter {
 
-	constructor(private model: JSON) { }
+export class WorkspaceFooter extends BaseModel {
 	
 	public get version(): string
 	{
-		return this.model['version'];
+		return this._model['version'];
 	}
 
 	public get author(): string
 	{
-		return this.model['author'];
+		return this._model['author'];
 	}
 }

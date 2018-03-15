@@ -1,28 +1,17 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { BaseComponent, BaseModel } from '../base/base.component';
 
 @Component({
 	selector: 'app-workspace-loader',
 	templateUrl: './workspace-loader.component.html',
 	styleUrls: ['./workspace-loader.component.scss']
 })
-export class WorkspaceLoaderComponent implements OnInit {
+export class WorkspaceLoaderComponent extends BaseComponent<WorkspaceLoader> {
 
-	@Input()
-	data: WorkspaceLoader;
-
-	constructor() { }
-
-	ngOnInit() { }
 }
 
-export class WorkspaceLoader {
-	private text: string;
-
-	constructor(text?: string) {
-		this.text = text || 'Loading Resources...';
-	}
-
+export class WorkspaceLoader extends BaseModel {
 	public get message(): string {
-		return this.text;
+		return this._model['text'] || 'Loading Resources...';
 	}
 }

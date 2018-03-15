@@ -31,14 +31,14 @@ export class WorkspaceComponent implements OnInit, AfterContentInit {
 	}
 
 	ngOnInit() {
-		this.loader = new WorkspaceLoader();
+		this.loader = new WorkspaceLoader(<JSON> { });
 	}
 
 	ngAfterContentInit(): void {
 		setTimeout(()=>{
 			this.loadWorkspace();
 			this.loadPage('home');
-		}, 2500);
+		}, 0);
 	}
 
 	private loadWorkspace(): void
@@ -67,7 +67,10 @@ export class WorkspaceComponent implements OnInit, AfterContentInit {
 
 		this.workspaceService.message.processMessage(`pages/${pageId}.html`)
 		.subscribe(message => {
-			this.loadedPages[pageId] = new WorkspacePage(message.text());
+			let json = <JSON> {};
+			json['template'] = message.text();
+
+			this.loadedPages[pageId] = new WorkspacePage(json);
 			this.currentPage = this.loadedPages[pageId];
 
 			this.isLoadingPage = false;

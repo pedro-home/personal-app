@@ -1,37 +1,34 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { MatDialogRef, MatDialog } from '@angular/material';
 import { ComponentType } from '@angular/core/src/render3';
+import { BaseComponent, BaseModel } from '../base/base.component';
 
 @Component({
 	selector: 'app-workspace-dialog',
 	template: `<div></div>`
 })
-export class WorkspaceDialogComponent implements OnInit {
-
-	@Input()
-	private selected: WorkspaceDialog;
+export class WorkspaceDialogComponent extends BaseComponent<WorkspaceDialog> {
 
 	constructor(private dialog: MatDialog)
 	{
-
+		super();
 	}
 
 	ngOnInit() {
+		super.ngOnInit();
 		this.openDialog();
 	}
 
 	public openDialog(): void
 	{
-		let dialogRef = this.dialog.open(this.selected.type);
+		// let dialogRef = this.dialog.open(this.data['type']);
 	}
 }
 
 
-export class WorkspaceDialog {
+export class WorkspaceDialog extends BaseModel {
 
-	constructor(private componentType)	{ }
-
-	public get type() {
-		return this.componentType;
+	public get type(): string {
+		return this._model['type'];
 	}
 }
