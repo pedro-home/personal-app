@@ -8,14 +8,3 @@ $warn:    mat-palette($mat-red, 600);
 $theme: mat-light-theme($primary, $accent, $warn);
 
 @include angular-material-theme($theme);
-
-//Angular theming components
-
-.mat-toolbar {
-    background-color: mat-color($primary);
-    color: #fff;
-}
-
-.mat-icon {
-    color: mat-color($accent);
-}
