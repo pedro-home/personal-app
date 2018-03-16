@@ -10,6 +10,7 @@ import { WorkspaceFooterComponent } from './workspace-footer/workspace-footer.co
 import { WorkspacePageComponent } from './workspace-page/workspace-page.component';
 import { WorkspaceDialogComponent } from './workspace-dialog/workspace-dialog.component';
 import { WorkspaceLoaderComponent } from './workspace-loader/workspace-loader.component';
+import { BaseComponent } from './base/base.component';
 
 @NgModule({
 	imports: [
@@ -27,6 +28,7 @@ import { WorkspaceLoaderComponent } from './workspace-loader/workspace-loader.co
 	exports: [WorkspaceComponent],
 	declarations: [
 		WorkspaceComponent,
+		BaseComponent,
 		WorkspaceHeaderComponent,
 		WorkspaceFooterComponent,
 		WorkspacePageComponent,

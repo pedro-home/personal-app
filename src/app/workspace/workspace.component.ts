@@ -1,10 +1,12 @@
 import { Component, OnInit, AfterContentInit } from '@angular/core';
+
 import { WorkspaceService } from './workspace.service';
 import { WorkspaceHeader } from './workspace-header/workspace-header.component';
 import { WorkspaceFooter } from './workspace-footer/workspace-footer.component';
 import { WorkspaceDialog } from './workspace-dialog/workspace-dialog.component';
 import { WorkspaceLoaderComponent, WorkspaceLoader } from './workspace-loader/workspace-loader.component';
 import { WorkspacePage } from './workspace-page/workspace-page.component';
+import { State } from './base/base.component';
 
 @Component({
 	selector: 'app-workspace',
@@ -72,6 +74,7 @@ export class WorkspaceComponent implements OnInit, AfterContentInit {
 
 			this.loadedPages[pageId] = new WorkspacePage(json);
 			this.currentPage = this.loadedPages[pageId];
+			this.currentPage.state = State.ACTIVE;
 
 			this.isLoadingPage = false;
 			this.isLoading = this.isLoadingWorkspace;
@@ -79,6 +82,12 @@ export class WorkspaceComponent implements OnInit, AfterContentInit {
 	}
 
 	private receiveAction($event) {
+		
+		if (this.currentPage)
+		{
+			this.currentPage.state = State.INACTIVE;
+		}
+
 		this.loadPage($event);
 	}
 }

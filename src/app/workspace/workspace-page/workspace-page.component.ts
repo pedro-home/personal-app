@@ -1,10 +1,11 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { BaseComponent, BaseModel } from '../base/base.component';
+import { BaseComponent, BaseModel, BaseAnimations } from '../base/base.component';
 
 @Component({
 	selector: 'app-workspace-page',
 	templateUrl: './workspace-page.component.html',
-	styleUrls: ['./workspace-page.component.scss']
+	styleUrls: ['./workspace-page.component.scss'],
+	animations: BaseAnimations.BASIC
 })
 export class WorkspacePageComponent extends BaseComponent<WorkspacePage> {
 
