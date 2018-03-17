@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { BaseComponent, BaseModel } from '../base/base.component';
+import { BaseComponent, BaseItem } from '../base/base.component';
 
 @Component({
 	selector: 'app-workspace-header',
@@ -9,7 +9,7 @@ import { BaseComponent, BaseModel } from '../base/base.component';
 export class WorkspaceHeaderComponent extends BaseComponent<WorkspaceHeader> {
 
 }
-export class WorkspaceHeader extends BaseModel {
+export class WorkspaceHeader extends BaseItem {
 
 	public get buttons(): Array<JSON> {
 		return this._model['buttons'];

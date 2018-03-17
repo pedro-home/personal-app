@@ -63,7 +63,7 @@ export class WorkspaceComponent implements OnInit, AfterContentInit {
 		if (page)
 		{
 			// Already in cache
-			this.currentPage = page;
+			this.openPage(page);
 			return;
 		}
 
@@ -73,21 +73,19 @@ export class WorkspaceComponent implements OnInit, AfterContentInit {
 			json['template'] = message.text();
 
 			this.loadedPages[pageId] = new WorkspacePage(json);
-			this.currentPage = this.loadedPages[pageId];
-			this.currentPage.state = State.ACTIVE;
-
-			this.isLoadingPage = false;
-			this.isLoading = this.isLoadingWorkspace;
+			this.openPage(this.loadedPages[pageId]);
 		});
 	}
 
-	private receiveAction($event) {
-		
-		if (this.currentPage)
-		{
-			this.currentPage.state = State.INACTIVE;
-		}
+	private openPage(page: WorkspacePage)
+	{
+		this.isLoadingPage = false;
+		this.isLoading = this.isLoadingWorkspace;
 
+		this.currentPage = page;
+	}
+
+	private receiveAction($event) {
 		this.loadPage($event);
 	}
 }

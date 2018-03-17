@@ -23,11 +23,10 @@ export class BaseAnimations {
 	];
 }
 
-export class BaseModel {
-	public state: State;
+export class BaseItem {
 
 	constructor(protected _model: JSON) {
-		this.state = State.INACTIVE;
+
 	}
 
 	public get model(): JSON {
@@ -40,10 +39,10 @@ export class BaseModel {
 	template: `<p>This is the base component</p>`,
 	animations: BaseAnimations.BASIC
 })
-export class BaseComponent<T extends BaseModel> implements OnInit {
+export class BaseComponent<T extends BaseItem> implements OnInit {
 
 	@Input()
-	data: T;
+	item: T;
 
 	@Output()
 	protected actionEvent = new EventEmitter<string>();

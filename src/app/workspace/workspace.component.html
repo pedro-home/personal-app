@@ -2,11 +2,11 @@
 <ng-container *ngIf="isLoading; then loaderTemplate; else workspaceTemplate"></ng-container>
 
 <ng-template #workspaceTemplate>
-    <app-workspace-header (actionEvent)="receiveAction($event)" [data]="header"></app-workspace-header>
-    <app-workspace-page [data]="currentPage"></app-workspace-page>
-    <app-workspace-footer [data]="footer"></app-workspace-footer>
+    <app-workspace-header (actionEvent)="receiveAction($event)" [item]="header"></app-workspace-header>
+    <app-workspace-page [item]="currentPage"></app-workspace-page>
+    <app-workspace-footer [item]="footer"></app-workspace-footer>
 </ng-template>
 
 <ng-template #loaderTemplate>
-    <app-workspace-loader *ngIf="loader" [data]="loader"></app-workspace-loader>
+    <app-workspace-loader *ngIf="loader" [item]="loader"></app-workspace-loader>
 </ng-template>
