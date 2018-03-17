@@ -1,13 +1,17 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { BaseComponent, BaseItem } from '../base/base.component';
+import { BaseItem } from '../base/base';
 
 @Component({
 	selector: 'app-workspace-footer',
 	templateUrl: './workspace-footer.component.html',
 	styleUrls: ['./workspace-footer.component.scss']
 })
-export class WorkspaceFooterComponent extends BaseComponent<WorkspaceFooter> {
+export class WorkspaceFooterComponent {
 
+	@Input()
+	item: WorkspaceFooter;
+
+	ngOnInit() { }
 }
 
 export class WorkspaceFooter extends BaseItem {

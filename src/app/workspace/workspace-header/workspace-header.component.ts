@@ -1,13 +1,30 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { BaseComponent, BaseItem } from '../base/base.component';
+import { BaseItem } from '../base/base';
 
 @Component({
 	selector: 'app-workspace-header',
 	templateUrl: './workspace-header.component.html',
 	styleUrls: ['./workspace-header.component.scss']
 })
-export class WorkspaceHeaderComponent extends BaseComponent<WorkspaceHeader> {
+export class WorkspaceHeaderComponent {
 
+	@Input()
+	item: WorkspaceHeader;
+
+	@Output()
+	protected actionEvent = new EventEmitter<string>();
+
+	ngOnInit() { }
+
+	public executeAction(name: string) {
+		let type = name.match(/^.+(?=:)/g)[0];
+		name = name.replace(`${type}:`, '');
+
+		if (type === 'page')
+		{
+			this.actionEvent.emit(name);
+		}
+	}
 }
 export class WorkspaceHeader extends BaseItem {
 

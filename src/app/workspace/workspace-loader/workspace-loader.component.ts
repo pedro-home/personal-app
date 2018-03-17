@@ -1,13 +1,14 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { BaseComponent, BaseItem } from '../base/base.component';
+import { BaseItem } from '../base/base';
 
 @Component({
 	selector: 'app-workspace-loader',
 	templateUrl: './workspace-loader.component.html',
 	styleUrls: ['./workspace-loader.component.scss']
 })
-export class WorkspaceLoaderComponent extends BaseComponent<WorkspaceLoader> {
-
+export class WorkspaceLoaderComponent {
+	@Input()
+	item: WorkspaceLoader;
 }
 
 export class WorkspaceLoader extends BaseItem {

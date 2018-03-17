@@ -33,29 +33,3 @@ export class BaseItem {
 		return this._model;
 	}
 }
-
-@Component({
-	selector: 'app-base',
-	template: `<p>This is the base component</p>`,
-	animations: BaseAnimations.BASIC
-})
-export class BaseComponent<T extends BaseItem> implements OnInit {
-
-	@Input()
-	item: T;
-
-	@Output()
-	protected actionEvent = new EventEmitter<string>();
-
-	ngOnInit() { }
-
-	public executeAction(name: string) {
-		let type = name.match(/^.+(?=:)/g)[0];
-		name = name.replace(`${type}:`, '');
-
-		if (type === 'page')
-		{
-			this.actionEvent.emit(name);
-		}
-	}
-}

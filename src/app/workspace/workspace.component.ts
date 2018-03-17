@@ -1,12 +1,12 @@
-import { Component, OnInit, AfterContentInit } from '@angular/core';
+import { Component, OnInit, AfterContentInit, ViewChild, ViewContainerRef, OnDestroy } from '@angular/core';
 
 import { WorkspaceService } from './workspace.service';
 import { WorkspaceHeader } from './workspace-header/workspace-header.component';
 import { WorkspaceFooter } from './workspace-footer/workspace-footer.component';
 import { WorkspaceDialog } from './workspace-dialog/workspace-dialog.component';
 import { WorkspaceLoaderComponent, WorkspaceLoader } from './workspace-loader/workspace-loader.component';
-import { WorkspacePage } from './workspace-page/workspace-page.component';
-import { State } from './base/base.component';
+import { WorkspacePage, WorkspacePageComponent } from './workspace-page/workspace-page.component';
+import { State } from './base/base';
 
 @Component({
 	selector: 'app-workspace',
@@ -15,17 +15,18 @@ import { State } from './base/base.component';
 	providers: [WorkspaceService]
 })
 
-export class WorkspaceComponent implements OnInit, AfterContentInit {
+export class WorkspaceComponent implements OnInit, AfterContentInit, OnDestroy {
 
 	private header: WorkspaceHeader;
 	private footer: WorkspaceFooter;
 	private loader: WorkspaceLoader;
-	private currentPage: WorkspacePage;
 	private loadedPages: JSON;
-
-	isLoading: boolean
+	public isLoading: boolean
 	private isLoadingWorkspace: boolean
 	private isLoadingPage: boolean;
+
+	@ViewChild("#pageContainer", { read: ViewContainerRef })
+	public pageContainer: ViewContainerRef;
 
 	constructor(private workspaceService: WorkspaceService) {
 		this.isLoading = this.isLoadingWorkspace = this.isLoadingPage = true;
@@ -43,6 +44,10 @@ export class WorkspaceComponent implements OnInit, AfterContentInit {
 		}, 0);
 	}
 
+	ngOnDestroy(): void {
+		this.workspaceService.factory.destroyAllComponents(this.pageContainer);    
+	}
+
 	private loadWorkspace(): void
 	{
 		// Initialize workspace
@@ -57,13 +62,24 @@ export class WorkspaceComponent implements OnInit, AfterContentInit {
 		});
 	}
 
+	private createPage(page: WorkspacePage): void {
+		this.isLoadingPage = false;
+		this.isLoading = this.isLoadingWorkspace;
+
+		this.workspaceService.factory.createComponent(this.pageContainer, WorkspacePageComponent);
+	}
+
+	private destroyPage(): void {
+
+	}
+
 	private loadPage(pageId: string): void {
 
 		let page = this.loadedPages[pageId];
 		if (page)
 		{
 			// Already in cache
-			this.openPage(page);
+			this.createPage(page);
 			return;
 		}
 
@@ -73,16 +89,8 @@ export class WorkspaceComponent implements OnInit, AfterContentInit {
 			json['template'] = message.text();
 
 			this.loadedPages[pageId] = new WorkspacePage(json);
-			this.openPage(this.loadedPages[pageId]);
+			this.createPage(this.loadedPages[pageId]);
 		});
-	}
-
-	private openPage(page: WorkspacePage)
-	{
-		this.isLoadingPage = false;
-		this.isLoading = this.isLoadingWorkspace;
-
-		this.currentPage = page;
 	}
 
 	private receiveAction($event) {
