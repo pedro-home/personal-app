@@ -4,6 +4,10 @@ html, body {
 }
 
 .mat-toolbar {
+	&.mat-toolbar-size-small {
+		height: 32px;
+	}
+
 	.mat-toolbar-spacer {
 		width: 100%;
 	}

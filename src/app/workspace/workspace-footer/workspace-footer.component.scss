@@ -1,5 +1,5 @@
-mat-toolbar {
-    &.mat-toolbar-size-small {
-        height: 32px;
-    }
+:host {
+    position: absolute;
+    width: 100%;
+    bottom: 0px;
 }

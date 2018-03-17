@@ -1,8 +1,7 @@
 .mat-toolbar {
-    background-color: mat-color($primary);
-    color: #fff;
+    background-color: rgba(22,22,22,0.8);
 }
 
 .mat-icon {
-    color: mat-color($accent);
+    color: mat-color($primary);
 }
