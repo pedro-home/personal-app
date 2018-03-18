@@ -31,7 +31,6 @@ import { LoaderComponent } from './loader/loader.component';
 		FooterComponent,
 		PageComponent,
 		LoaderComponent
-	],
-	entryComponents: [ PageComponent ]
+	]
 })
 export class WorkspaceModule { }

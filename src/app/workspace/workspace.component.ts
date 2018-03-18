@@ -14,22 +14,17 @@ import { State } from './base/base';
 	providers: [WorkspaceService]
 })
 
-export class WorkspaceComponent implements OnInit, AfterContentInit, OnDestroy {
+export class WorkspaceComponent implements OnInit, AfterContentInit {
 
 	private header: Header;
 	private footer: Footer;
 	private loader: Loader;
-	private loadedPages: JSON;
-	public isLoading: boolean
-	private isLoadingWorkspace: boolean
-	private isLoadingPage: boolean;
+	private page: Page;
 
-	@ViewChild("#pageContainer", { read: ViewContainerRef })
-	public pageContainer: ViewContainerRef;
+	private loaded: Object;
 
 	constructor(private workspaceService: WorkspaceService) {
-		this.isLoading = this.isLoadingWorkspace = this.isLoadingPage = true;
-		this.loadedPages = <JSON> {};
+		this.loaded = { workpsace: false, page: false };
 	}
 
 	ngOnInit() {
@@ -39,60 +34,37 @@ export class WorkspaceComponent implements OnInit, AfterContentInit, OnDestroy {
 	ngAfterContentInit(): void {
 		setTimeout(()=>{
 			this.loadWorkspace();
-			this.loadPage('home');
 		}, 0);
-	}
-
-	ngOnDestroy(): void {
-		this.workspaceService.factory.destroyAllComponents(this.pageContainer);    
 	}
 
 	private loadWorkspace(): void
 	{
-		// Initialize workspace
 		this.workspaceService.message.processMessage('workspace.json')
 		.subscribe(message => {
 			let json = message.json();
 			this.header = new Header(json['header']);
 			this.footer = new Footer(json['footer']);
 
-			this.isLoadingWorkspace = false;
-			this.isLoading = this.isLoadingPage;
+			this.loaded['workspace'] = true;
 		});
+
+		this.loadPage();
 	}
 
-	private createPage(page: Page): void {
-		this.isLoadingPage = false;
-		this.isLoading = this.isLoadingWorkspace;
+	private loadPage(): void {
 
-		this.workspaceService.factory.createComponent(this.pageContainer, PageComponent);
-	}
-
-	private destroyPage(): void {
-
-	}
-
-	private loadPage(pageId: string): void {
-
-		let page = this.loadedPages[pageId];
-		if (page)
-		{
-			// Already in cache
-			this.createPage(page);
-			return;
-		}
-
-		this.workspaceService.message.processMessage(`pages/${pageId}.html`)
+		this.workspaceService.message.processMessage(`page/page.html`)
 		.subscribe(message => {
 			let json = <JSON> {};
 			json['template'] = message.text();
 
-			this.loadedPages[pageId] = new Page(json);
-			this.createPage(this.loadedPages[pageId]);
+			this.page = new Page(json);
+
+			this.loaded['page'] = true;
 		});
 	}
 
 	private receiveAction($event) {
-		this.loadPage($event);
+		
 	}
 }
