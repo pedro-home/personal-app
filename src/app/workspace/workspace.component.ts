@@ -3,7 +3,6 @@ import { Component, OnInit, AfterContentInit, ViewChild, ViewContainerRef, OnDes
 import { WorkspaceService } from './workspace.service';
 import { WorkspaceHeader } from './workspace-header/workspace-header.component';
 import { WorkspaceFooter } from './workspace-footer/workspace-footer.component';
-import { WorkspaceDialog } from './workspace-dialog/workspace-dialog.component';
 import { WorkspaceLoaderComponent, WorkspaceLoader } from './workspace-loader/workspace-loader.component';
 import { WorkspacePage, WorkspacePageComponent } from './workspace-page/workspace-page.component';
 import { State } from './base/base';
