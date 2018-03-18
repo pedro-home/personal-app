@@ -1,9 +1,9 @@
 <mat-toolbar>
-	<button mat-icon-button (click)="executeAction('page:home')">
+	<a mat-icon-button href="#welcome">
 		<mat-icon>{{ item.home }}</mat-icon>
-	</button>
+	</a>
 	<span class="mat-toolbar-spacer"></span>
-	<button *ngFor="let option of item.buttons" mat-button (click)="executeAction(option.action)">
+	<a *ngFor="let option of item.buttons" mat-button href="#{{option.action}}">
 		<span>{{ option.text }}</span>
-	</button>
+	</a>
 </mat-toolbar>

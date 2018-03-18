@@ -4,15 +4,15 @@
         "buttons": [
             {
                 "text": "About me",
-                "action": "page:aboutme"
+                "action": "aboutme"
             },
             {
                 "text": "Projects",
-                "action": "page:projects"
+                "action": "projects"
             },
             {
                 "text": "Contacts",
-                "action": "page:contacts"
+                "action": "contacts"
             }
         ]
     },
