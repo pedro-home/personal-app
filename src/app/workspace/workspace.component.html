@@ -3,10 +3,10 @@
 
 <ng-template #workspaceTemplate>
     <template #pageContainer></template>
-    <app-workspace-header (actionEvent)="receiveAction($event)" [item]="header"></app-workspace-header>
-    <app-workspace-footer [item]="footer"></app-workspace-footer>
+    <app-header (actionEvent)="receiveAction($event)" [item]="header"></app-header>
+    <app-footer [item]="footer"></app-footer>
 </ng-template>
 
 <ng-template #loaderTemplate>
-    <app-workspace-loader *ngIf="loader" [item]="loader"></app-workspace-loader>
+    <app-loader *ngIf="loader" [item]="loader"></app-loader>
 </ng-template>

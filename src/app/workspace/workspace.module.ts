@@ -5,10 +5,10 @@ import { HttpModule } from '@angular/http';
 import { MatToolbarModule, MatButtonModule, MatIconModule, MatProgressSpinnerModule, MatDialogModule, MatCardModule } from '@angular/material';
 
 import { WorkspaceComponent } from './workspace.component';
-import { WorkspaceHeaderComponent } from './workspace-header/workspace-header.component';
-import { WorkspaceFooterComponent } from './workspace-footer/workspace-footer.component';
-import { WorkspacePageComponent } from './workspace-page/workspace-page.component';
-import { WorkspaceLoaderComponent } from './workspace-loader/workspace-loader.component';
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
+import { PageComponent } from './page/page.component';
+import { LoaderComponent } from './loader/loader.component';
 
 @NgModule({
 	imports: [
@@ -27,11 +27,11 @@ import { WorkspaceLoaderComponent } from './workspace-loader/workspace-loader.co
 	exports: [WorkspaceComponent],
 	declarations: [
 		WorkspaceComponent,
-		WorkspaceHeaderComponent,
-		WorkspaceFooterComponent,
-		WorkspacePageComponent,
-		WorkspaceLoaderComponent
+		HeaderComponent,
+		FooterComponent,
+		PageComponent,
+		LoaderComponent
 	],
-	entryComponents: [ WorkspacePageComponent ]
+	entryComponents: [ PageComponent ]
 })
 export class WorkspaceModule { }

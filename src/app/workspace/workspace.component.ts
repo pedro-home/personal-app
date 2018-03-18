@@ -1,10 +1,10 @@
 import { Component, OnInit, AfterContentInit, ViewChild, ViewContainerRef, OnDestroy } from '@angular/core';
 
 import { WorkspaceService } from './workspace.service';
-import { WorkspaceHeader } from './workspace-header/workspace-header.component';
-import { WorkspaceFooter } from './workspace-footer/workspace-footer.component';
-import { WorkspaceLoaderComponent, WorkspaceLoader } from './workspace-loader/workspace-loader.component';
-import { WorkspacePage, WorkspacePageComponent } from './workspace-page/workspace-page.component';
+import { Header } from './header/header.component';
+import { Footer } from './footer/footer.component';
+import { LoaderComponent, Loader } from './loader/loader.component';
+import { Page, PageComponent } from './page/page.component';
 import { State } from './base/base';
 
 @Component({
@@ -16,9 +16,9 @@ import { State } from './base/base';
 
 export class WorkspaceComponent implements OnInit, AfterContentInit, OnDestroy {
 
-	private header: WorkspaceHeader;
-	private footer: WorkspaceFooter;
-	private loader: WorkspaceLoader;
+	private header: Header;
+	private footer: Footer;
+	private loader: Loader;
 	private loadedPages: JSON;
 	public isLoading: boolean
 	private isLoadingWorkspace: boolean
@@ -33,7 +33,7 @@ export class WorkspaceComponent implements OnInit, AfterContentInit, OnDestroy {
 	}
 
 	ngOnInit() {
-		this.loader = new WorkspaceLoader(<JSON> { });
+		this.loader = new Loader(<JSON> { });
 	}
 
 	ngAfterContentInit(): void {
@@ -53,19 +53,19 @@ export class WorkspaceComponent implements OnInit, AfterContentInit, OnDestroy {
 		this.workspaceService.message.processMessage('workspace.json')
 		.subscribe(message => {
 			let json = message.json();
-			this.header = new WorkspaceHeader(json['header']);
-			this.footer = new WorkspaceFooter(json['footer']);
+			this.header = new Header(json['header']);
+			this.footer = new Footer(json['footer']);
 
 			this.isLoadingWorkspace = false;
 			this.isLoading = this.isLoadingPage;
 		});
 	}
 
-	private createPage(page: WorkspacePage): void {
+	private createPage(page: Page): void {
 		this.isLoadingPage = false;
 		this.isLoading = this.isLoadingWorkspace;
 
-		this.workspaceService.factory.createComponent(this.pageContainer, WorkspacePageComponent);
+		this.workspaceService.factory.createComponent(this.pageContainer, PageComponent);
 	}
 
 	private destroyPage(): void {
@@ -87,7 +87,7 @@ export class WorkspaceComponent implements OnInit, AfterContentInit, OnDestroy {
 			let json = <JSON> {};
 			json['template'] = message.text();
 
-			this.loadedPages[pageId] = new WorkspacePage(json);
+			this.loadedPages[pageId] = new Page(json);
 			this.createPage(this.loadedPages[pageId]);
 		});
 	}

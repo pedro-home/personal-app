@@ -2,14 +2,14 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { BaseItem } from '../base/base';
 
 @Component({
-	selector: 'app-workspace-header',
-	templateUrl: './workspace-header.component.html',
-	styleUrls: ['./workspace-header.component.scss']
+	selector: 'app-header',
+	templateUrl: './header.component.html',
+	styleUrls: ['./header.component.scss']
 })
-export class WorkspaceHeaderComponent {
+export class HeaderComponent {
 
 	@Input()
-	item: WorkspaceHeader;
+	item: Header;
 
 	@Output()
 	protected actionEvent = new EventEmitter<string>();
@@ -26,7 +26,7 @@ export class WorkspaceHeaderComponent {
 		}
 	}
 }
-export class WorkspaceHeader extends BaseItem {
+export class Header extends BaseItem {
 
 	public get buttons(): Array<JSON> {
 		return this._model['buttons'];

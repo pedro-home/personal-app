@@ -1,6 +1,6 @@
 import { Injectable, ComponentFactoryResolver, ComponentRef, ComponentFactory, Component, ViewContainerRef } from '@angular/core';
 import { Http } from '@angular/http';
-import { WorkspacePageComponent } from './workspace-page/workspace-page.component';
+import { PageComponent } from './page/page.component';
 
 @Injectable()
 export class WorkspaceService {

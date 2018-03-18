@@ -2,19 +2,19 @@ import { Component, OnInit, Input } from '@angular/core';
 import { BaseItem } from '../base/base';
 
 @Component({
-	selector: 'app-workspace-footer',
-	templateUrl: './workspace-footer.component.html',
-	styleUrls: ['./workspace-footer.component.scss']
+	selector: 'app-footer',
+	templateUrl: './footer.component.html',
+	styleUrls: ['./footer.component.scss']
 })
-export class WorkspaceFooterComponent {
+export class FooterComponent {
 
 	@Input()
-	item: WorkspaceFooter;
+	item: Footer;
 
 	ngOnInit() { }
 }
 
-export class WorkspaceFooter extends BaseItem {
+export class Footer extends BaseItem {
 	
 	public get version(): string
 	{
