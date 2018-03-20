@@ -3,7 +3,7 @@
 
 @include mat-core();
 
-$primary: mat-palette($mat-orange, 300);
+$primary: mat-palette($mat-blue, 600);
 $accent:  mat-palette($mat-brown, A200);
 $warn:    mat-palette($mat-red, 600);
 $theme: mat-dark-theme($primary, $accent, $warn);
@@ -12,3 +12,9 @@ $theme: mat-dark-theme($primary, $accent, $warn);
 
 // Custom components theming
 @include page-theme($theme);
+
+$typography: mat-typography-config(
+  $font-family: 'Titillium Web, sans-serif'
+);
+
+@include angular-material-typography($typography);
