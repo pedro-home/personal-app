@@ -1,5 +1,5 @@
 
-<ng-container *ngIf="!loaded['workspace'] || !loaded['page']; then loaderTemplate; else workspaceTemplate"></ng-container>
+<ng-container *ngIf="!loaded['workspace']; then loaderTemplate; else workspaceTemplate"></ng-container>
 
 <ng-template #workspaceTemplate>
     <app-header (actionEvent)="receiveAction($event)" [item]="header"></app-header>

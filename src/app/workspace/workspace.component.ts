@@ -48,11 +48,10 @@ export class WorkspaceComponent implements OnInit, AfterContentInit {
 			this.loaded['workspace'] = true;
 		});
 
-		this.loadPage();
+		// this.loadPage();
 	}
 
 	private loadPage(): void {
-
 		this.workspaceService.message.processMessage(`page/page.html`)
 		.subscribe(message => {
 			let json = <JSON> {};

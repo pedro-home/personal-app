@@ -1,0 +1,11 @@
+@import '~@angular/material/theming';
+
+@mixin page-theme($theme) {
+    $primary: map-get($theme, primary);
+  
+    app-page .page-content {
+        > section.mat-theme-color {
+            background-color: mat-color($primary);
+        }
+    }
+}
