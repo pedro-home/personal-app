@@ -4,8 +4,9 @@
     $primary: map-get($theme, primary);
   
     app-page .page-content {
-        > section.mat-theme-color {
+        > section.theme-color {
             background-color: mat-color($primary);
+            color: white;
         }
     }
 }

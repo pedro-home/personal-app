@@ -1,9 +1,13 @@
+@import '../../../styles/common/base/variables';
+@import '../../../styles/common/base/functions';
+
 #welcome {
     height: 100vh;
     width: 100%;
     min-height: 650px;
 
     background: url('../../../assets/images/home.jpg') no-repeat center fixed;
+    color: white;
     background-size: cover;
 }
 
@@ -12,16 +16,42 @@
 }
 
 header {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-
     > .header-body {
         text-align: center;
 
         > .container-text {
             filter: drop-shadow(0px 10px 10px rgba(5,5,5,.8));
+        }
+    }
+}
+
+.formula {
+    cursor: default;
+    span {
+        font-size: $icon-size-m;
+    }
+
+    .formula-variable {
+        width: 15vh;
+
+        > .mat-icon {
+            @include add-icon-size($icon-size-l);
+        }
+
+
+        .variable-description {
+            display: none;
+            text-align: center;
+
+            > p {
+                text-align: center;
+            }
+        }
+
+        &:hover {
+            .variable-description {
+                display: block;
+            }
         }
     }
 }

@@ -12,7 +12,6 @@ html, body {
 	}
 }
 
-// Icon sizes
 .mat-icon {
-	@include add-icon-size('caption', $icon-caption);
+	@include add-icon-size($icon-size-m);
 }
