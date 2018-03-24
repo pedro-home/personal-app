@@ -25,7 +25,7 @@ export class PageComponent implements OnInit {
 	public loadSections(): void {
 		this.messageService.processMessage('sections/formula.html')
 		.subscribe(message => {
-			let componentData = { selector: 'app-section',template: message.text() };
+			let componentData = { selector: 'app-section', template: message.text() };
 			let sectionComponent = this.componentService.loadComponent(this.sectionContainer, componentData);
 		});
 	}
