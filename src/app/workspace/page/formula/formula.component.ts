@@ -1,15 +1,29 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { BaseItem } from '../../base/base';
 
 @Component({
-  selector: 'app-formula',
-  templateUrl: './formula.component.html',
-  styleUrls: ['./formula.component.scss']
+	selector: 'app-formula',
+	templateUrl: './formula.component.html',
+	styleUrls: ['./formula.component.scss']
 })
 export class FormulaComponent implements OnInit {
 
-  constructor() { }
+	@Input()
+	private item: Formula;
 
-  ngOnInit() {
-  }
+	constructor() { }
 
+	ngOnInit() {
+	}
+
+}
+
+export class Formula extends BaseItem {
+	public get variables(): Array<JSON> {
+		return this._model['variables'];
+	}
+
+	public get length(): number {
+		return this.variables.length;
+	}
 }

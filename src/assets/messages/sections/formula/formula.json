@@ -1,0 +1,39 @@
+{
+    "variables": [
+        {
+            "title": "CREATIVITY",
+            "icon": "palette",
+            "description": "Developing something unique and valuable"
+        },
+        {
+            "title": "MOTIVATION",
+            "icon": "sentiment_very_satisfied",
+            "description": "Learning technologies and completing challenges"
+        },
+        {
+            "title": "COMMUNICATION",
+            "icon": "chat",
+            "description": "Discussing solutions and ideas"
+        },
+        {
+            "title": "TEAM SPIRIT",
+            "icon": "wc",
+            "description": "Being an important piece of the puzzle"
+        },
+        {
+            "title": "QUALITY",
+            "icon": "star",
+            "description": "Creating high quality code"
+        },
+        {
+            "title": "PROFESSIONALISM",
+            "icon": "work",
+            "description": "Jumping obstacles before time"
+        },
+        {
+            "title": "SUCCESS",
+            "icon": "wb_incandescent",
+            "description": "Smiling at the end of the day"
+        }
+    ]
+}

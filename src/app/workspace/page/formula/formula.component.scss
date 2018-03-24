@@ -1,0 +1,34 @@
+@import '../../../../styles/common/base/variables';
+@import '../../../../styles/common/base/functions';
+
+:host {
+    cursor: default;
+    span {
+        font-size: $icon-size-m;
+    }
+
+    .formula-variable {
+        width: 15vh;
+        text-align: center;
+
+        > .mat-icon {
+            @include add-icon-size($icon-size-l);
+        }
+
+
+        .variable-description {
+            display: none;
+            text-align: center;
+
+            > p {
+                text-align: center;
+            }
+        }
+
+        &:hover {
+            .variable-description {
+                display: block;
+            }
+        }
+    }
+}
