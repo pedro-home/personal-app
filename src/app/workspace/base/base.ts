@@ -23,6 +23,11 @@ export class BaseAnimations {
 	];
 }
 
+export class BaseComponent {
+	@Input()
+	item: any;
+}
+
 export class BaseItem {
 
 	constructor(protected _model: JSON) {

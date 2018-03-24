@@ -1,7 +1,8 @@
 import { Component, OnInit, Input, ViewChild, ComponentFactoryResolver, ViewContainerRef, ComponentRef } from '@angular/core';
-import { BaseItem } from '../base/base';
+import { BaseItem, BaseComponent } from '../base/base';
 import { MessageService } from '../message.service';
 import { ComponentService } from '../component.service';
+import { Formula } from './formula/formula.component';
 
 @Component({
 	selector: 'app-page',
@@ -23,10 +24,15 @@ export class PageComponent implements OnInit {
 	}
 
 	public loadSections(): void {
-		this.messageService.processMessage('sections/formula.html')
+		this.messageService.processMessage('sections/formula/formula.json')
 		.subscribe(message => {
-			let componentData = { selector: 'app-section', template: message.text() };
-			let sectionComponent = this.componentService.loadComponent(this.sectionContainer, componentData);
+			let json = message.json();
+
+			this.messageService.processMessage('sections/formula/formula.html')
+			.subscribe(message => {
+				let componentData = { selector: 'app-section', template: message.text() };
+				this.componentService.loadComponent(this.sectionContainer, componentData, new Formula(json));
+			});
 		});
 	}
 }

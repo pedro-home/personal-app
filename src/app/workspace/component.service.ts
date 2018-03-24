@@ -2,6 +2,7 @@ import { Injectable, ComponentFactoryResolver, Type, ViewContainerRef, Component
 import { CommonModule } from '@angular/common';
 import { MatIconModule } from '@angular/material';
 import { FormulaComponent } from './page/formula/formula.component';
+import { BaseComponent, BaseItem } from './base/base';
 
 @Injectable()
 export class ComponentService {
@@ -9,13 +10,14 @@ export class ComponentService {
 
     }
     
-    public loadComponent(container: ViewContainerRef, metadata: Component): any {
+    public loadComponent(container: ViewContainerRef, metadata: Component, item ?: BaseItem): void {
         let factory = this.createComponentFactory(metadata);
-        return container.createComponent(factory);
+        let component = container.createComponent(factory);
+        (<BaseComponent> component.instance).item = item;
     }
 
     private createComponentFactory(metadata: Component): ComponentFactory<any> {
-        const decoratedCmp = Component(metadata)(class RuntimeComponent {});
+        const decoratedCmp = Component(metadata)(BaseComponent);
 
         @NgModule({ imports: [CommonModule, MatIconModule], declarations: [decoratedCmp, FormulaComponent] })
         class RuntimeComponentModule { }
