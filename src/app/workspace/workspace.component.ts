@@ -1,17 +1,16 @@
 import { Component, OnInit, AfterContentInit, ViewChild, ViewContainerRef, OnDestroy } from '@angular/core';
 
-import { WorkspaceService } from './workspace.service';
 import { Header } from './header/header.component';
 import { Footer } from './footer/footer.component';
 import { LoaderComponent, Loader } from './loader/loader.component';
-import { Page, PageComponent } from './page/page.component';
 import { State } from './base/base';
+import { MessageService } from './message.service';
 
 @Component({
 	selector: 'app-workspace',
 	templateUrl: './workspace.component.html',
 	styleUrls: ['./workspace.component.scss'],
-	providers: [WorkspaceService]
+	providers: [MessageService]
 })
 
 export class WorkspaceComponent implements OnInit, AfterContentInit {
@@ -19,12 +18,11 @@ export class WorkspaceComponent implements OnInit, AfterContentInit {
 	private header: Header;
 	private footer: Footer;
 	private loader: Loader;
-	private page: Page;
 
-	private loaded: Object;
+	private loaded: boolean;
 
-	constructor(private workspaceService: WorkspaceService) {
-		this.loaded = { workpsace: false, page: false };
+	constructor(private messageService: MessageService) {
+		this.loaded = false;
 	}
 
 	ngOnInit() {
@@ -39,27 +37,13 @@ export class WorkspaceComponent implements OnInit, AfterContentInit {
 
 	private loadWorkspace(): void
 	{
-		this.workspaceService.message.processMessage('workspace.json')
+		this.messageService.processMessage('workspace.json')
 		.subscribe(message => {
 			let json = message.json();
 			this.header = new Header(json['header']);
 			this.footer = new Footer(json['footer']);
 
-			this.loaded['workspace'] = true;
-		});
-
-		// this.loadPage();
-	}
-
-	private loadPage(): void {
-		this.workspaceService.message.processMessage(`page/page.html`)
-		.subscribe(message => {
-			let json = <JSON> {};
-			json['template'] = message.text();
-
-			this.page = new Page(json);
-
-			this.loaded['page'] = true;
+			this.loaded = true;
 		});
 	}
 

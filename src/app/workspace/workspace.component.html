@@ -1,9 +1,9 @@
 
-<ng-container *ngIf="!loaded['workspace']; then loaderTemplate; else workspaceTemplate"></ng-container>
+<ng-container *ngIf="!loaded; then loaderTemplate; else workspaceTemplate"></ng-container>
 
 <ng-template #workspaceTemplate>
     <app-header (actionEvent)="receiveAction($event)" [item]="header"></app-header>
-    <app-page [item]="page"></app-page>
+    <app-page></app-page>
     <!-- <app-footer [item]="footer"></app-footer> -->
 </ng-template>
 

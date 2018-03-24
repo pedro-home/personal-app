@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpModule } from '@angular/http';
 
-import { MatToolbarModule, MatButtonModule, MatIconModule, MatProgressSpinnerModule, MatDialogModule, MatCardModule } from '@angular/material';
+import { MatToolbarModule, MatButtonModule, MatIconModule, MatProgressSpinnerModule, MatDialogModule } from '@angular/material';
 
 import { WorkspaceComponent } from './workspace.component';
 import { HeaderComponent } from './header/header.component';
@@ -20,7 +20,6 @@ import { LoaderComponent } from './loader/loader.component';
 		MatButtonModule,
 		MatIconModule,
 		MatDialogModule,
-		MatCardModule,
 		MatProgressSpinnerModule
 
 	],
