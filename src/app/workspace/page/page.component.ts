@@ -1,19 +1,32 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, ViewChild, ComponentFactoryResolver, ViewContainerRef, ComponentRef } from '@angular/core';
 import { BaseItem } from '../base/base';
+import { MessageService } from '../message.service';
+import { ComponentService } from '../component.service';
 
 @Component({
 	selector: 'app-page',
 	templateUrl: './page.component.html',
-	styleUrls: ['./page.component.scss']
+	styleUrls: ['./page.component.scss'],
+	providers: [MessageService, ComponentService]
 })
-export class PageComponent {
-	@Input()
-	item: Page;
-}
+export class PageComponent implements OnInit {
 
-export class Page extends BaseItem {
+	@ViewChild('sectionContainer', { read: ViewContainerRef })
+	private sectionContainer: ViewContainerRef;
 
-	public get html(): string {
-		return this._model['template'];
+	constructor(private messageService: MessageService, private componentService: ComponentService) {
+
+	}
+
+	ngOnInit(): void {
+		this.loadSections();
+	}
+
+	public loadSections(): void {
+		this.messageService.processMessage('sections/formula.html')
+		.subscribe(message => {
+			let componentData = { selector: 'app-section',template: message.text() };
+			let sectionComponent = this.componentService.loadComponent(this.sectionContainer, componentData);
+		});
 	}
 }
