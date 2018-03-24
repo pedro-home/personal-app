@@ -24,34 +24,3 @@ header {
         }
     }
 }
-
-.formula {
-    cursor: default;
-    span {
-        font-size: $icon-size-m;
-    }
-
-    .formula-variable {
-        width: 15vh;
-
-        > .mat-icon {
-            @include add-icon-size($icon-size-l);
-        }
-
-
-        .variable-description {
-            display: none;
-            text-align: center;
-
-            > p {
-                text-align: center;
-            }
-        }
-
-        &:hover {
-            .variable-description {
-                display: block;
-            }
-        }
-    }
-}

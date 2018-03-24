@@ -10,9 +10,6 @@ $theme: mat-light-theme($primary, $accent, $warn);
 
 @include angular-material-theme($theme);
 
-// Custom components theming
-@include page-theme($theme);
-
 $typography: mat-typography-config(
   $font-family: 'Titillium Web, sans-serif'
 );

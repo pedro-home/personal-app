@@ -15,3 +15,8 @@ html, body {
 .mat-icon {
 	@include add-icon-size($icon-size-m);
 }
+
+section.theme-color {
+	background-color: mat-color($primary);
+	color: white;
+}
