@@ -1,6 +1,7 @@
 import { Injectable, ComponentFactoryResolver, Type, ViewContainerRef, Component, Compiler, NgModule, ModuleWithComponentFactories, ComponentFactory } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatIconModule } from '@angular/material';
+import { FormulaComponent } from './page/formula/formula.component';
 
 @Injectable()
 export class ComponentService {
@@ -16,7 +17,7 @@ export class ComponentService {
     private createComponentFactory(metadata: Component): ComponentFactory<any> {
         const decoratedCmp = Component(metadata)(class RuntimeComponent {});
 
-        @NgModule({ imports: [CommonModule, MatIconModule], declarations: [decoratedCmp] })
+        @NgModule({ imports: [CommonModule, MatIconModule], declarations: [decoratedCmp, FormulaComponent] })
         class RuntimeComponentModule { }
 
         let module: ModuleWithComponentFactories<any> = this.compiler.compileModuleAndAllComponentsSync(RuntimeComponentModule);
