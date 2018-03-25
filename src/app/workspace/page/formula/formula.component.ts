@@ -14,8 +14,8 @@ export class FormulaComponent implements OnInit {
 	constructor() { }
 
 	ngOnInit() {
-	}
 
+	}
 }
 
 export class Formula extends BaseItem {

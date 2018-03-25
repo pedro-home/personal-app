@@ -3,31 +3,37 @@
 
 :host {
     cursor: default;
-    span {
-        font-size: $icon-size-m;
-    }
+    display: block;
 
-    .formula-variable {
-        width: 15vh;
-        text-align: center;
+    .formula-box {
+        display: inline-block;
 
-        > .mat-icon {
-            @include add-icon-size($icon-size-l);
+        > span {
+            font-size: $icon-size-m;
         }
 
-
-        .variable-description {
-            display: none;
+        > .formula-variable {
             text-align: center;
 
-            > p {
-                text-align: center;
+            > .mat-icon {
+                @include add-icon-size($icon-size-l);
             }
-        }
 
-        &:hover {
+
             .variable-description {
-                display: block;
+                text-align: center;
+                width: 15vw;
+                visibility: hidden;
+
+                > p {
+                    text-align: center;
+                }
+            }
+
+            &:hover {
+                .variable-description {
+                    display: block;
+                }
             }
         }
     }

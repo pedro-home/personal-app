@@ -1,4 +1,4 @@
-<div *ngFor="let variable of item.variables" class="formula-box">
+<div *ngFor="let variable of item.variables; index as i; last as isLast" class="formula-box">
 	<div class="formula-variable">
 		<mat-icon>{{variable['icon']}}</mat-icon>
 		<div class="variable-description">
@@ -8,5 +8,5 @@
 			</p>
 		</div>
 	</div>
-	<span>+</span>
+	<span *ngIf="!isLast">{{ i < item.length - 2 ? '+' : '='}}</span>
 </div>
