@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpModule } from '@angular/http';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { MatToolbarModule, MatButtonModule, MatIconModule, MatProgressSpinnerModule, MatDialogModule } from '@angular/material';
 
@@ -14,6 +15,7 @@ import { LoaderComponent } from './loader/loader.component';
 	imports: [
 		CommonModule,
 		HttpModule,
+		FlexLayoutModule,
 
 		// Material
 		MatToolbarModule,
