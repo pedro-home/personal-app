@@ -1,14 +1,19 @@
 @import '~@angular/material/theming';
+@import '../app/workspace/page/page.component.theme';
 
+// Theme
 @include mat-core();
 
 $primary: mat-palette($mat-blue, 600);
 $accent:  mat-palette($mat-brown, A200);
 $warn:    mat-palette($mat-red, 600);
-$theme: mat-light-theme($primary, $accent, $warn);
+$theme:   mat-light-theme($primary, $accent, $warn);
 
 @include angular-material-theme($theme);
 
+@include section-theme($theme);
+
+// Typography
 $typography: mat-typography-config(
   $font-family: 'Titillium Web, sans-serif'
 );

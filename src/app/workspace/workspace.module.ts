@@ -10,6 +10,7 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { PageComponent } from './page/page.component';
 import { LoaderComponent } from './loader/loader.component';
+import { FormulaComponent } from './page/formula/formula.component';
 
 @NgModule({
 	imports: [
@@ -23,7 +24,6 @@ import { LoaderComponent } from './loader/loader.component';
 		MatIconModule,
 		MatDialogModule,
 		MatProgressSpinnerModule
-
 	],
 	exports: [WorkspaceComponent],
 	declarations: [
@@ -31,7 +31,8 @@ import { LoaderComponent } from './loader/loader.component';
 		HeaderComponent,
 		FooterComponent,
 		PageComponent,
-		LoaderComponent
+		LoaderComponent,
+		FormulaComponent
 	]
 })
 export class WorkspaceModule { }

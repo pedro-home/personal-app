@@ -12,8 +12,12 @@ import { Formula } from './formula/formula.component';
 })
 export class PageComponent implements OnInit {
 
+	/*
 	@ViewChild('sectionContainer', { read: ViewContainerRef })
 	private sectionContainer: ViewContainerRef;
+	*/
+
+	private formula: Formula;
 
 	constructor(private messageService: MessageService, private componentService: ComponentService) {
 
@@ -24,15 +28,25 @@ export class PageComponent implements OnInit {
 	}
 
 	public loadSections(): void {
-		this.messageService.processMessage('sections/formula/formula.json')
+		this.messageService.processMessage('sections/formula.json')
 		.subscribe(message => {
-			let json = message.json();
+			this.formula = new Formula(message.json());
 
+			/*
 			this.messageService.processMessage('sections/formula/formula.html')
 			.subscribe(message => {
 				let componentData = { selector: 'app-section', template: message.text() };
 				this.componentService.loadComponent(this.sectionContainer, componentData, new Formula(json));
 			});
+			*/
 		});
+
+		/*
+		this.messageService.processMessage('sections/about/about.html')
+		.subscribe(message => {
+			let componentData = { selector: 'app-section', template: message.text() };
+			this.componentService.loadComponent(this.sectionContainer, componentData);
+		});
+		*/
 	}
 }

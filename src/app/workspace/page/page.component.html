@@ -1,6 +1,5 @@
 <div class="page-content">
-
-	<!-- Welcome -->
+	<!-- WELCOME -->
 	<header id="welcome" fxLayout="column" fxLayoutAlign="center center">
 		<div class="container-text">
 			<h1 class="mat-display-4">Pedro Gomes</h1>
@@ -10,5 +9,28 @@
 			<mat-icon>arrow_downward</mat-icon>
 		</a>
 	</header>
-	<ng-template #sectionContainer></ng-template>
+
+	<!-- FORMULA -->
+	<section id="formula" class="section-theme" fxLayout="column" fxLayoutAlign="center" fxLayoutGap="4rem">
+		<div class="section-container" fxFlexAlign="center">
+			<h1 class="mat-headline">How my brain works?</h1>
+			<hr>
+		</div>
+		<div class="section-container">
+			<app-formula *ngIf="formula" [item]="formula"></app-formula>
+		</div>
+	</section>
+
+	<!-- ABOUT -->
+	<section id="about" fxLayout="column" fxLayoutAlign="center" fxLayoutGap="4rem">
+		<div class="section-container" fxFlexAlign="center">
+			<h1 class="mat-headline">Who am I?</h1>
+			<hr>
+		</div>
+		<div class="section-container">
+			<p class="mat-body2">
+				My name is Pedro Gomes and I'm a Software Developer, living in Portugal. Even though I'm considered a Full Stack professional, my main focus and speciality is Front-End Development.
+			</p>
+		</div>
+	</section>
 </div>

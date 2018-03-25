@@ -1,7 +1,19 @@
+// DOM
 html, body {
     margin: 0;
 }
 
+hr {
+	border-style: solid;
+	border-width: 1px;
+	max-width: 50px;
+}
+
+section {
+	padding: 2rem 0;
+}
+
+//Angular Material
 .mat-toolbar {
 	&.mat-toolbar-size-small {
 		height: 32px;
@@ -18,10 +30,4 @@ html, body {
 
 .mat-display-1, .mat-display-2, .mat-display-3, .mat-display-4 {
 	text-align: center;
-}
-
-hr {
-	border-style: solid;
-	border-width: 1px;
-	max-width: 50px;
 }

@@ -1,0 +1,11 @@
+
+@import '~@angular/material/theming';
+
+@mixin section-theme($theme) {
+    $primary: map-get($theme, primary);
+
+    .section-theme {
+        background-color: mat-color($primary);
+        color: white;
+    }
+}
