@@ -4,15 +4,12 @@
     background: url('../../../assets/images/home.jpg') no-repeat center fixed;
     color: white;
     background-size: cover;
+
+    .container-text > * {
+        filter: drop-shadow(0px 8px 4px rgba(8,8,8,.8));
+    }
 }
 
 #aboutme {
     height: 200px;
-}
-
-header {
-    .container-text {
-        text-align: center;
-        filter: drop-shadow(0px 10px 10px rgba(5,5,5,.8));
-    }
 }

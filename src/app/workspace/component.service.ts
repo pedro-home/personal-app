@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { MatIconModule } from '@angular/material';
 import { FormulaComponent } from './page/formula/formula.component';
 import { BaseComponent, BaseItem } from './base/base';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 @Injectable()
 export class ComponentService {
@@ -19,7 +20,7 @@ export class ComponentService {
     private createComponentFactory(metadata: Component): ComponentFactory<any> {
         const decoratedCmp = Component(metadata)(BaseComponent);
 
-        @NgModule({ imports: [CommonModule, MatIconModule], declarations: [decoratedCmp, FormulaComponent] })
+        @NgModule({ imports: [CommonModule, MatIconModule, FlexLayoutModule], declarations: [decoratedCmp, FormulaComponent] })
         class RuntimeComponentModule { }
 
         let module: ModuleWithComponentFactories<any> = this.compiler.compileModuleAndAllComponentsSync(RuntimeComponentModule);

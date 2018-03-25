@@ -1,9 +1,8 @@
 section {
-    .section-container {
-        width: 100%;
-        padding: 0 15px;
-        margin: 0 auto;
+    padding: 2rem 0;
+
+    &.theme-color {
+        background-color: mat-color($primary);
+        color: white;
     }
 }
-
-@import './formula';
