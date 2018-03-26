@@ -4,7 +4,11 @@
     width: 100%;
     top: 0px;
 
-    .mat-icon, .mat-button {
-        color: white;
+    .mat-toolbar {
+        background-color: rgba(22,22,22,0);
+
+        .mat-icon, .mat-button {
+            color: white;
+        }
     }
 }

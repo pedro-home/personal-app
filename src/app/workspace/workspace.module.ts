@@ -11,6 +11,7 @@ import { FooterComponent } from './footer/footer.component';
 import { PageComponent } from './page/page.component';
 import { LoaderComponent } from './loader/loader.component';
 import { FormulaComponent } from './page/formula/formula.component';
+import { HistoryComponent } from './page/history/history.component';
 
 @NgModule({
 	imports: [
@@ -32,7 +33,8 @@ import { FormulaComponent } from './page/formula/formula.component';
 		FooterComponent,
 		PageComponent,
 		LoaderComponent,
-		FormulaComponent
+		FormulaComponent,
+		HistoryComponent
 	]
 })
 export class WorkspaceModule { }

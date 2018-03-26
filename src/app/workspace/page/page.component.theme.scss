@@ -4,8 +4,16 @@
 @mixin section-theme($theme) {
     $primary: map-get($theme, primary);
 
-    .section-theme {
-        background-color: mat-color($primary);
-        color: white;
+    section {
+        &.section-theme {
+            background-color: mat-color($primary);
+            color: white;
+        }
+
+        &:not(.section-theme) {
+            hr {
+                border-color: mat-color($primary);
+            }
+        }
     }
 }
