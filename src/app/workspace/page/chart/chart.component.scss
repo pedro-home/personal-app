@@ -1,0 +1,12 @@
+:host {
+    display: inline-block;
+
+    .chart-name, .chart-value {
+        margin: 0;
+    }
+
+    .chart-name {
+        width: 20vw;
+        text-align: end;
+    }
+}

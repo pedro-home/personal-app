@@ -1,0 +1,11 @@
+@import '~@angular/material/theming';
+
+@mixin chart-theme($theme) {
+    $primary: map-get($theme, primary);
+
+    app-chart {
+        svg > rect {
+            fill: mat-color($primary);
+        }
+    }
+}
