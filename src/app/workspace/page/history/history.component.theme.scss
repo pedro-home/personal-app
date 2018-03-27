@@ -1,0 +1,23 @@
+@import '~@angular/material/theming';
+
+@mixin history-theme($theme) {
+    $primary: map-get($theme, primary);
+
+    app-history {
+        svg > {
+            circle {
+                fill: mat-color($primary);
+            }
+
+            line {
+                stroke: mat-color($primary);
+            }
+        }
+
+        .history-details {
+            > .history-year {
+                color: mat-color($primary);
+            }
+        }
+    }
+}

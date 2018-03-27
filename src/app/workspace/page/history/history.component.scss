@@ -1,0 +1,30 @@
+:host {
+    .history-details {
+        position: absolute;
+        display: inline-block;
+
+        max-width: 20vw;
+
+        > .history-year {
+            line-height: 1;
+        }
+
+        > .history-description {
+            display: none;
+        }
+
+        &.details-even {
+            transform: translateX(-100%);
+
+            > * {
+                text-align: end;
+            }
+        }
+
+        &:hover {
+            .history-description {
+                display: block;
+            }
+        }
+    }
+}

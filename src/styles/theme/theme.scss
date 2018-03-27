@@ -1,5 +1,6 @@
 @import '~@angular/material/theming';
 @import '../app/workspace/page/page.component.theme';
+@import '../app/workspace/page/history/history.component.theme';
 
 // Theme
 @include mat-core();
@@ -12,6 +13,7 @@ $theme:   mat-light-theme($primary, $accent, $warn);
 @include angular-material-theme($theme);
 
 @include section-theme($theme);
+@include history-theme($theme);
 
 // Typography
 $typography: mat-typography-config(
