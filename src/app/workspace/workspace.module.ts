@@ -12,6 +12,7 @@ import { PageComponent } from './page/page.component';
 import { LoaderComponent } from './loader/loader.component';
 import { FormulaComponent } from './page/formula/formula.component';
 import { HistoryComponent } from './page/history/history.component';
+import { ChartComponent } from './page/chart/chart.component';
 
 @NgModule({
 	imports: [
@@ -34,7 +35,8 @@ import { HistoryComponent } from './page/history/history.component';
 		PageComponent,
 		LoaderComponent,
 		FormulaComponent,
-		HistoryComponent
+		HistoryComponent,
+		ChartComponent
 	]
 })
 export class WorkspaceModule { }
