@@ -1,4 +1,40 @@
 :host {
+    display: inline-block;
+    margin: 0 50%;
+
+    .history-milestone {
+
+        .history-details {
+            > .history-description {
+                display: none;
+            }
+
+            &.details-even {
+                transform: translateX(-100%);
+
+                > * {
+                    text-align: end;
+                }
+            }
+        }
+
+        &:hover {
+            .history-description {
+                display: block;
+            }
+        }
+    }
+
+    .history-birth {
+        > .history-details {
+            transform: translateX(-50%);
+
+            > * {
+                text-align: center;
+            }
+        }
+    }
+
     .history-details {
         position: absolute;
         display: inline-block;
@@ -7,24 +43,6 @@
 
         > .history-year {
             line-height: 1;
-        }
-
-        > .history-description {
-            display: none;
-        }
-
-        &.details-even {
-            transform: translateX(-100%);
-
-            > * {
-                text-align: end;
-            }
-        }
-
-        &:hover {
-            .history-description {
-                display: block;
-            }
         }
     }
 }
