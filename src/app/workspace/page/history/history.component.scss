@@ -16,11 +16,11 @@
                     text-align: end;
                 }
             }
-        }
-
-        &:hover {
-            .history-description {
-                display: block;
+            
+            &:hover {
+                > .history-description {
+                    display: block;
+                }
             }
         }
     }
