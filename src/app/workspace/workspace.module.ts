@@ -39,4 +39,5 @@ import { ChartComponent } from './page/chart/chart.component';
 		ChartComponent
 	]
 })
-export class WorkspaceModule { }
+export class WorkspaceModule {
+}

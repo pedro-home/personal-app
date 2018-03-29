@@ -2,22 +2,22 @@
     "variables": [
         {
             "title": "CREATIVITY",
-            "icon": "palette",
+            "icon": "rocket",
             "description": "Developing something unique and valuable"
         },
         {
             "title": "MOTIVATION",
-            "icon": "sentiment_very_satisfied",
+            "icon": "fire",
             "description": "Learning technologies and completing challenges"
         },
         {
             "title": "COMMUNICATION",
-            "icon": "chat",
+            "icon": "comments",
             "description": "Discussing solutions and ideas"
         },
         {
             "title": "TEAM SPIRIT",
-            "icon": "wc",
+            "icon": "people-carry",
             "description": "Being an important piece of the puzzle"
         },
         {
@@ -27,12 +27,12 @@
         },
         {
             "title": "PROFESSIONALISM",
-            "icon": "work",
+            "icon": "briefcase",
             "description": "Jumping obstacles before time"
         },
         {
             "title": "SUCCESS",
-            "icon": "wb_incandescent",
+            "icon": "smile",
             "description": "Smiling at the end of the day"
         }
     ]

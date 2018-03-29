@@ -24,7 +24,11 @@ section {
 	}
 }
 
-.mat-icon {
+mat-icon.mat-icon {
+	&.fa, &.fas, &.fab {
+		width: auto;
+	}
+
 	@include add-icon-size($icon-size-m);
 }
 

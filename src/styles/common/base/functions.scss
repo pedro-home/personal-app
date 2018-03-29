@@ -1,7 +1,6 @@
 @mixin add-icon-size($size, $name: null) {
     @if $name != null {
         &.mat-icon-#{$name} {
-            width: $size;
             height: $size;
             font-size: $size;
             line-height: $size;
@@ -9,7 +8,6 @@
     }
     @else {
         &.mat-icon {
-            width: $size;
             height: $size;
             font-size: $size;
             line-height: $size;
