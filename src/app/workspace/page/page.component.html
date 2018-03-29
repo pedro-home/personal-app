@@ -35,7 +35,7 @@
 			</p>
 		</div>
 		<div class="section-container">
-			<app-history></app-history>
+			<app-history *ngIf="history" [item]="history"></app-history>
 		</div>
 		<div class="section-container">
 			<app-chart *ngIf="technologies" [item]="technologies"></app-chart>

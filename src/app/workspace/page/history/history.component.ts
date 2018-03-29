@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { BaseItem } from '../../base/base';
 
 @Component({
 	selector: 'app-history',
@@ -7,36 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HistoryComponent implements OnInit {
 
+	@Input()
+	item: History;
+
 	private size: number;
 	private distance: number;
-
-	private item =
-	{
-		"birth": "1992",
-		"milestones":
-		[
-			{
-				"year": ["2018", "now"],
-				"title": "HELLO",
-				"description": "FUCK YOU"
-			},
-			{
-				"year": ["2017", "2018"],
-				"title": "HELLO",
-				"description": "FUCK YOU"
-			},
-			{
-				"year": ["2016", "2017"],
-				"title": "HELLO",
-				"description": "FUCK YOU"
-			},
-			{
-				"year": ["2014", "2016"],
-				"title": "HELLO",
-				"description": "FUCK YOU"
-			}
-		]
-	}
 
 	constructor() {
 		this.size = 14;
@@ -46,4 +22,14 @@ export class HistoryComponent implements OnInit {
 	ngOnInit() {
 	}
 
+}
+
+export class History extends BaseItem {
+	public get birth(): string {
+		return this._model['birth'];
+	}
+
+	public get milestones(): Array<JSON> {
+		return this._model['milestones'];
+	}
 }
