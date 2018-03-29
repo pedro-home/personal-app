@@ -47,14 +47,7 @@
 			<hr>
 		</div>
 		<div class="section-container">
-			<div class="contacts-container" fxLayout="row" fxLayoutAlign="center" fxLayoutGap="4rem">
-				<mat-icon fontSet="fab" fontIcon="fa-github"></mat-icon>
-				<mat-icon fontSet="fab" fontIcon="fa-facebook"></mat-icon>
-				<mat-icon fontSet="fab" fontIcon="fa-twitter"></mat-icon>
-				<mat-icon fontSet="fab" fontIcon="fa-linkedin"></mat-icon>
-				<mat-icon fontSet="fab" fontIcon="fa-youtube"></mat-icon>
-				<mat-icon fontIcon="fa-envelope"></mat-icon>
-			</div>
+			<app-contacts *ngIf="contacts" [item]="contacts"></app-contacts>
 		</div>
 	</section>
 </div>

@@ -1,0 +1,13 @@
+<div class="contacts-container" fxLayout="row" fxLayoutAlign="center" fxLayoutGap="4rem">
+	<div class="contacts-contact">
+		<div *ngFor="let contact of item.contact">
+			<mat-icon fontIcon="fa-{{contact.icon}}"></mat-icon>
+			<span>{{contact.value}}</span>
+		</div>
+	</div>
+	<div class="contacts-social">
+		<a *ngFor="let social of item.social" mat-button href="{{social.url}}"> 
+			<mat-icon fontSet="fab" fontIcon="fa-{{social.icon}}"></mat-icon>
+		</a>
+	</div>
+</div>

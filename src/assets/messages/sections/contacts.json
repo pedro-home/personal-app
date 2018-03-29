@@ -1,0 +1,39 @@
+{
+    "contact": [
+        {
+            "icon": "envelope",
+            "value": "pedro.work.92@gmail.com"
+        },
+        {
+            "icon": "mobile-alt",
+            "value": "+351 918335271"
+        }
+    ],
+
+    "social": [
+        {
+            "icon": "github",
+            "url": "https://github.com/pedro-gomes-92"
+        },
+        {
+            "icon": "linkedin",
+            "url": "https://www.linkedin.com/in/pedro-gomes-746636a3/"
+        },
+        {
+            "icon": "facebook",
+            "url": "https://www.facebook.com/pedro.gomes.14811692"
+        },
+        {
+            "icon": "instagram",
+            "url": "https://www.instagram.com/pedro.gomes.92/"
+        },
+        {
+            "icon": "youtube",
+            "url": "https://www.youtube.com/channel/UCKpyUBtfFy3UFzh0LaDIznA"
+        },
+        {
+            "icon": "twitch",
+            "url": "https://www.twitch.tv/gpoupas"
+        }
+    ]
+}

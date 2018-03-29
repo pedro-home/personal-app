@@ -1,25 +1,21 @@
 import { Component, OnInit, Input, ViewChild, ComponentFactoryResolver, ViewContainerRef, ComponentRef } from '@angular/core';
 import { BaseItem, BaseComponent } from '../base/base';
 import { MessageService } from '../message.service';
-import { ComponentService } from '../component.service';
 import { Formula } from './formula/formula.component';
+import { Contacts } from './contacts/contacts.component';
 
 @Component({
 	selector: 'app-page',
 	templateUrl: './page.component.html',
 	styleUrls: ['./page.component.scss'],
-	providers: [MessageService, ComponentService]
+	providers: [MessageService]
 })
 export class PageComponent implements OnInit {
 
-	/*
-	@ViewChild('sectionContainer', { read: ViewContainerRef })
-	private sectionContainer: ViewContainerRef;
-	*/
-
 	private formula: Formula;
+	private contacts: Contacts;
 
-	constructor(private messageService: MessageService, private componentService: ComponentService) {
+	constructor(private messageService: MessageService) {
 
 	}
 
@@ -31,22 +27,11 @@ export class PageComponent implements OnInit {
 		this.messageService.processMessage('sections/formula.json')
 		.subscribe(message => {
 			this.formula = new Formula(message.json());
-
-			/*
-			this.messageService.processMessage('sections/formula/formula.html')
-			.subscribe(message => {
-				let componentData = { selector: 'app-section', template: message.text() };
-				this.componentService.loadComponent(this.sectionContainer, componentData, new Formula(json));
-			});
-			*/
 		});
 
-		/*
-		this.messageService.processMessage('sections/about/about.html')
+		this.messageService.processMessage('sections/contacts.json')
 		.subscribe(message => {
-			let componentData = { selector: 'app-section', template: message.text() };
-			this.componentService.loadComponent(this.sectionContainer, componentData);
+			this.contacts = new Contacts(message.json());
 		});
-		*/
 	}
 }
