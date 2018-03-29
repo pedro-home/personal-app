@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { BaseItem } from '../../base/base';
 
 @Component({
 	selector: 'app-chart',
@@ -7,31 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ChartComponent implements OnInit {
 
+	@Input()
+	item: Chart;
+
 	private size: number;
 	private distance: number;
-
-	private item =
-	{
-		"bars":
-		[
-			{
-				"name": "TYPESCRIPT, ECMASCRIPT & JAVASCRIPT",
-				"value": 75
-			},
-			{
-				"name": "HTML5",
-				"value": 70
-			},
-			{
-				"name": "SCSS & CSS",
-				"value": 80
-			},
-			{
-				"name": "NODEJS",
-				"value": 60
-			}
-		]
-	}
 
 	constructor() {
 		this.size = 1000;
@@ -40,5 +21,10 @@ export class ChartComponent implements OnInit {
 
 	ngOnInit() {
 	}
+}
 
+export class Chart extends BaseItem {
+	public get data(): Array<JSON> {
+		return this._model['data'];
+	}
 }

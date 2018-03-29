@@ -1,0 +1,21 @@
+{
+    "data":
+    [
+        {
+            "name": "TYPESCRIPT, ECMASCRIPT & JAVASCRIPT",
+            "value": 75
+        },
+        {
+            "name": "HTML5",
+            "value": 70
+        },
+        {
+            "name": "SCSS & CSS",
+            "value": 80
+        },
+        {
+            "name": "NODEJS",
+            "value": 60
+        }
+    ]
+}

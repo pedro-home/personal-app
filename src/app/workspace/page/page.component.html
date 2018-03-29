@@ -38,7 +38,7 @@
 			<app-history></app-history>
 		</div>
 		<div class="section-container">
-			<app-chart></app-chart>
+			<app-chart *ngIf="technologies" [item]="technologies"></app-chart>
 		</div>
 	</section>
 	<section id="contacts" class="section-theme" fxLayout="column" fxLayoutAlign="center" fxLayoutGap="4rem">

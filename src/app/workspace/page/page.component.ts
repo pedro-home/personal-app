@@ -3,6 +3,7 @@ import { BaseItem, BaseComponent } from '../base/base';
 import { MessageService } from '../message.service';
 import { Formula } from './formula/formula.component';
 import { Contacts } from './contacts/contacts.component';
+import { Chart } from './chart/chart.component';
 
 @Component({
 	selector: 'app-page',
@@ -14,6 +15,8 @@ export class PageComponent implements OnInit {
 
 	private formula: Formula;
 	private contacts: Contacts;
+	private technologies: Chart;
+
 
 	constructor(private messageService: MessageService) {
 
@@ -27,6 +30,11 @@ export class PageComponent implements OnInit {
 		this.messageService.processMessage('sections/formula.json')
 		.subscribe(message => {
 			this.formula = new Formula(message.json());
+		});
+
+		this.messageService.processMessage('sections/technologies.json')
+		.subscribe(message => {
+			this.technologies = new Chart(message.json());
 		});
 
 		this.messageService.processMessage('sections/contacts.json')
