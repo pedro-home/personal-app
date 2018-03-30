@@ -6,9 +6,9 @@
             "description": "Developing something unique and valuable"
         },
         {
-            "title": "MOTIVATION",
-            "icon": "fire",
-            "description": "Learning technologies and completing challenges"
+            "title": "PROGRESSION",
+            "icon": "tachometer-alt",
+            "description": "Learning technologies and adquiring new skills"
         },
         {
             "title": "COMMUNICATION",
@@ -23,7 +23,7 @@
         {
             "title": "QUALITY",
             "icon": "star",
-            "description": "Creating high quality code"
+            "description": "Completing challenges with high quality performance"
         },
         {
             "title": "PROFESSIONALISM",

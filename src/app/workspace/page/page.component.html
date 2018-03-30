@@ -5,7 +5,7 @@
 			<h1 class="mat-display-4">Pedro Gomes</h1>
 			<h2 class="mat-display-1">Software Engineer</h2>
 		</div>
-		<a mat-mini-fab color="primary">
+		<a mat-mini-fab color="primary" href="#formula">
 			<mat-icon fontSet="fas" fontIcon="fa-angle-double-down"></mat-icon>
 		</a>
 	</header>
@@ -13,7 +13,7 @@
 	<!-- FORMULA -->
 	<section id="formula" class="section-theme" fxLayout="column" fxLayoutAlign="center" fxLayoutGap="4rem">
 		<div class="section-container" fxFlexAlign="center">
-			<h1 class="mat-headline">How my brain works?</h1>
+			<h1 class="mat-headline">Ambition</h1>
 			<hr>
 		</div>
 		<div class="section-container">
@@ -22,20 +22,34 @@
 	</section>
 
 	<!-- ABOUT -->
-	<section id="about" fxLayout="column" fxLayoutAlign="center" fxLayoutGap="4rem">
+	<section id="about" fxLayout="column" fxLayoutAlign="center" fxLayoutGap="2rem">
 		<div class="section-container" fxFlexAlign="center">
-			<h1 class="mat-headline">Who am I?</h1>
+			<h1 class="mat-headline">Presentation</h1>
 			<hr>
 		</div>
-		<div class="section-container">
-			<p class="mat-body-2">
-				My name is Pedro Gomes and I'm from a small town called Almada, Portugal.
-				I work full time as a Front-End developer, creating solutions to the clients' needs.
-				...
+		<div class="section-container mat-body-2" fxLayout="column" fxLayoutGap="2rem">
+			<img class="profile-image" fxFlexAlign="center" src="../../../../assets/images/profile.jpg"/>
+			<p>
+				First of all, let me give you a big THANK YOU and WELCOME, for taking your time and interest in my application. This is the best way to show you my professional skills, working experience and getting in touch.
 			</p>
+			<p>
+				If you don't know me yet, let me just give you a brief introduction. My name is Pedro Gomes and I'm from a small town called Almada, Portugal. I'm 25 years old and a Software developer, with a degree in Computer Engineering and Multimedia, focused in the front-end development. I have 3 years of work experience in programming, team leading and training (remotely and live).
+			</p>
+			<p>
+				Besides work, I love MUSIC, specially composing, playing acoustic guitar, piano and singing. For me, it's the best way to put our creative minds to work and relax from any type of stress. I've played with a group of friends, creating tracks that we are so proud of, and moments that I'll never forget. I also learned how to capture and edit music and videos, using MIXCRAFT, AUDACITY, CAMSTUDIO, FL STUDIO and CYBERLINK POWERDIRECTOR.
+			</p>
+			<p>
+				There are a lot of details that I didn't mention in this presentation but can be found in my CV. Also, feel free to check my profile and portfolio for a better analysis. If you have any question, don't hesitate to contact me or add me to your favorite social media.
+			</p>
+		</div>
+		<div class="section-container" fxFlexAlign="center">
+			<h1 class="mat-title">Experience</h1>
 		</div>
 		<div class="section-container">
 			<app-history *ngIf="history" [item]="history"></app-history>
+		</div>
+		<div class="section-container" fxFlexAlign="center">
+			<h1 class="mat-title">Technologies</h1>
 		</div>
 		<div class="section-container">
 			<app-chart *ngIf="technologies" [item]="technologies"></app-chart>
@@ -43,7 +57,7 @@
 	</section>
 	<section id="contacts" class="section-theme" fxLayout="column" fxLayoutAlign="center" fxLayoutGap="4rem">
 		<div class="section-container" fxFlexAlign="center">
-			<h1 class="mat-headline">Wanna get in touch?</h1>
+			<h1 class="mat-headline">Contacts</h1>
 			<hr>
 		</div>
 		<div class="section-container">

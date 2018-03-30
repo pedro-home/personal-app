@@ -11,10 +11,7 @@
 
             &.details-even {
                 transform: translateX(-100%);
-
-                > * {
-                    text-align: end;
-                }
+                text-align: end;
             }
             
             &:hover {
@@ -28,10 +25,7 @@
     .history-birth {
         > .history-details {
             transform: translateX(-50%);
-
-            > * {
-                text-align: center;
-            }
+            text-align: center;
         }
     }
 
@@ -39,7 +33,7 @@
         position: absolute;
         display: inline-block;
 
-        max-width: 20vw;
+        max-width: 30vw;
 
         > .history-year {
             line-height: 1;

@@ -4,7 +4,7 @@
         "buttons": [
             {
                 "text": "About",
-                "action": "formula"
+                "action": "about"
             },
             {
                 "text": "Portfolio",

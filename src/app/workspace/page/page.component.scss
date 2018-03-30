@@ -10,6 +10,13 @@
     }
 }
 
+#about {
+    .profile-image {
+        width: 256px;
+        clip-path: circle(50%);
+    }
+}
+
 .section-container {
     padding: 0 4rem;
 }
