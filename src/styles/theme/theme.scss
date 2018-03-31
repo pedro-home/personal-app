@@ -1,4 +1,5 @@
 @import '~@angular/material/theming';
+@import '../app/workspace/header/header.component.theme';
 @import '../app/workspace/page/page.component.theme';
 @import '../app/workspace/page/history/history.component.theme';
 @import '../app/workspace/page/chart/chart.component.theme';
@@ -6,20 +7,30 @@
 // Theme
 @include mat-core();
 
-$primary: mat-palette($mat-blue, 600);
-$accent:  mat-palette($mat-brown, A200);
-$warn:    mat-palette($mat-red, 600);
-$theme:   mat-light-theme($primary, $accent, $warn);
+$color-primary: mat-palette($mat-blue, 600);
+$color-accent: mat-palette($mat-grey, 800);
 
-@include angular-material-theme($theme);
+$theme-light: mat-light-theme($color-primary, $color-accent);
+$theme-dark: mat-dark-theme($color-primary, $color-accent);
 
-@include section-theme($theme);
-@include history-theme($theme);
-@include chart-theme($theme);
+@mixin apply-theme($theme) {
+	@include angular-material-theme($theme);
+
+	@include header-theme($theme);
+	@include section-theme($theme);
+	@include history-theme($theme);
+	@include chart-theme($theme);
+}
+
+@include apply-theme($theme-light);
+
+.theme-dark {
+	@include apply-theme($theme-dark);
+}
 
 // Typography
 $typography: mat-typography-config(
-  $font-family: 'Titillium Web, sans-serif'
+	$font-family: 'Titillium Web, sans-serif'
 );
 
 @include angular-material-typography($typography);

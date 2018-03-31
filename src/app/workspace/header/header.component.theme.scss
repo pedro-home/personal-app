@@ -1,0 +1,12 @@
+@import '~@angular/material/theming';
+
+@mixin header-theme($theme) {
+    $primary: map-get($theme, primary);
+
+    app-header {
+        .mat-toolbar {
+            color: white;
+            background: rgba(22,22,22,0);
+        }
+    }
+}
