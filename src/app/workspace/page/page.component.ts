@@ -5,6 +5,7 @@ import { Formula } from './formula/formula.component';
 import { Contacts } from './contacts/contacts.component';
 import { Chart } from './chart/chart.component';
 import { History } from './history/history.component';
+import { Grid } from './grid/grid.component';
 
 @Component({
 	selector: 'app-page',
@@ -18,6 +19,7 @@ export class PageComponent implements OnInit {
 	private contacts: Contacts;
 	private technologies: Chart;
 	private history: History;
+	private portfolio: Grid;
 
 
 	constructor(private messageService: MessageService) {
@@ -32,6 +34,11 @@ export class PageComponent implements OnInit {
 		this.messageService.processMessage('sections/formula.json')
 		.subscribe(message => {
 			this.formula = new Formula(message.json());
+		});
+
+		this.messageService.processMessage('sections/portfolio.json')
+		.subscribe(message => {
+			this.portfolio = new Grid(message.json());
 		});
 
 		this.messageService.processMessage('sections/journey.json')

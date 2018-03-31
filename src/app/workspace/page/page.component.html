@@ -22,7 +22,7 @@
 	</section>
 
 	<!-- ABOUT -->
-	<section id="about" fxLayout="column" fxLayoutAlign="center" fxLayoutGap="2rem">
+	<section id="about" fxLayout="column" fxLayoutAlign="center" fxLayoutGap="4rem">
 		<div class="section-container" fxFlexAlign="center">
 			<h1 class="mat-headline">Presentation</h1>
 			<hr>
@@ -49,16 +49,28 @@
 			</div>
 		</div>
 	</section>
+	<section id="portfolio" class="mat-accent" fxLayout="column" fxLayoutAlign="center" fxLayoutGap="4rem">
+		<div class="section-container" fxFlexAlign="center">
+			<h1 class="mat-headline">Portfolio</h1>
+			<hr>
+		</div>
+		<div class="section-container">
+			<app-grid *ngIf="portfolio" [item]="portfolio" fxLayout="column" fxLayoutAlign="center center"></app-grid>
+		</div>
+	</section>
 	<section id="experience" fxLayout="column" fxLayoutAlign="center" fxLayoutGap="4rem">
 		<div class="section-container" fxFlexAlign="center">
 			<h1 class="mat-headline">Experience</h1>
 			<hr>
 		</div>
 		<div class="section-container">
-			<app-history *ngIf="history" [item]="history"></app-history>
+			<app-history *ngIf="history" [item]="history" fxLayout="column" fxLayoutAlign="center center"></app-history>
 		</div>
+	</section>
+	<section id="skills" fxLayout="column" fxLayoutAlign="center" fxLayoutGap="4rem">
 		<div class="section-container" fxFlexAlign="center">
-			<h1 class="mat-title">Technologies</h1>
+			<h1 class="mat-headline">Skills</h1>
+			<hr>
 		</div>
 		<div class="section-container">
 			<app-chart *ngIf="technologies" [item]="technologies"></app-chart>
