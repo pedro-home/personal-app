@@ -17,6 +17,10 @@
         ]
     },
     "body": {
+        "information": {
+            "name": "Pedro Gomes",
+            "role": "Software Engineer"
+        },
         "sections": [
             {
                 "id": "ambition",

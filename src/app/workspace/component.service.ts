@@ -5,6 +5,7 @@ import { GridComponent } from './page/section/grid/grid.component';
 import { ContactsComponent } from './page/section/contacts/contacts.component';
 import { HistoryComponent } from './page/section/history/history.component';
 import { BaseComponent, Model } from './base/base';
+import { AboutComponent } from './page/section/about/about.component';
 
 @Injectable()
 export class ComponentService {
@@ -25,6 +26,9 @@ export class ComponentService {
 	private getComponent(name: string): Type<BaseComponent> {
 		let component;
 		switch (name) {
+			case 'about':
+				component = AboutComponent;
+				break;
 			case 'chart':
 				component = ChartComponent;
 				break;

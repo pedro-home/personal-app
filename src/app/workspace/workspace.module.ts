@@ -16,6 +16,7 @@ import { GridComponent } from './page/section/grid/grid.component';
 import { HistoryComponent } from './page/section/history/history.component';
 import { ChartComponent } from './page/section/chart/chart.component';
 import { ContactsComponent } from './page/section/contacts/contacts.component';
+import { AboutComponent } from './page/section/about/about.component';
 
 @NgModule({
 	imports: [
@@ -37,8 +38,9 @@ import { ContactsComponent } from './page/section/contacts/contacts.component';
 		HeaderComponent,
 		FooterComponent,
 		PageComponent,
-		SectionComponent,
 		LoaderComponent,
+		SectionComponent,
+		AboutComponent,
 		FormulaComponent,
 		GridComponent,
 		HistoryComponent,
@@ -46,6 +48,7 @@ import { ContactsComponent } from './page/section/contacts/contacts.component';
 		ContactsComponent
 	],
 	entryComponents: [
+		AboutComponent,
 		HistoryComponent,
 		GridComponent,
 		FormulaComponent,
