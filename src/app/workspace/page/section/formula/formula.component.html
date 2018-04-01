@@ -1,5 +1,5 @@
 <div class="formula-container" fxLayout="row" fxLayoutAlign="center" fxLayoutGap="12px">
-	<ng-container *ngFor="let variable of item.variables; index as i; last as isLast">
+	<ng-container *ngFor="let variable of model.data['variables']; index as i; last as isLast">
 		<div class="formula-variable">
 			<mat-icon fontSet="fas" fontIcon="fa-{{variable.icon}}"></mat-icon>
 			<div class="variable-description">
@@ -11,7 +11,7 @@
 		</div>
 		<div *ngIf="!isLast" class="formula-operator" fxFlexAlign="center">
 			<span>
-				{{ i < item.length - 2 ? '+' : '='}}
+				{{ i < model.data.length() - 2 ? '+' : '='}}
 			</span>
 		</div>
 	</ng-container>

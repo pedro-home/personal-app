@@ -1,4 +1,4 @@
-<div *ngFor="let milestone of item.milestones; index as i; last as isLast; even as isEven" class="history-milestone" [style.height.px]="distance">
+<div *ngFor="let milestone of model.data['milestones']; index as i; last as isLast; even as isEven" class="history-milestone" [style.height.px]="distance">
 	<svg [attr.width]="size" [attr.height]="distance">
 		<svg:circle [attr.cx]="size/2" [attr.cy]="size/2" [attr.r]="size/2" />
 		<svg:line [attr.x1]="size/2" [attr.x2]="size/2" [attr.y1]="size" [attr.y2]="distance" [attr.stroke-width]="size/5" [attr.stroke-dasharray]="isLast ? '6' : distance" />
@@ -9,12 +9,12 @@
 		<p class="history-description mat-caption">{{milestone.description}}</p>
 	</div>
 </div>
-<div class="history-birth" [style.height.px]="60 + size">
+<div class="history-birth" [style.height.px]="60+size">
 	<svg [attr.width]="size" [attr.height]="size+1">
 		<svg:circle [attr.cx]="size/2" [attr.cy]="size/2" [attr.r]="size/2" />
 	</svg>
 	<div class="history-details" [style.margin-left.px]="(size/2)">
-		<span class="history-year mat-body-2">{{item.birth}}</span>
+		<span class="history-year mat-body-2">{{model.data['birth']}}</span>
 		<h4 class="history-title mat-subheading-1">A BABY WAS BORN</h4>
 	</div>
 </div>

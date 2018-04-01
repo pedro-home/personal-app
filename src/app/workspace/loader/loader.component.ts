@@ -1,5 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { BaseItem } from '../base/base';
+import { Component } from '@angular/core';
 
 @Component({
 	selector: 'app-loader',
@@ -7,12 +6,5 @@ import { BaseItem } from '../base/base';
 	styleUrls: ['./loader.component.scss']
 })
 export class LoaderComponent {
-	@Input()
-	item: Loader;
-}
 
-export class Loader extends BaseItem {
-	public get message(): string {
-		return this._model['text'] || 'Loading Resources...';
-	}
 }

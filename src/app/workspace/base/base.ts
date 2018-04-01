@@ -25,16 +25,16 @@ export class BaseAnimations {
 
 export class BaseComponent {
 	@Input()
-	item: any;
+	protected model: Model;
 }
 
-export class BaseItem {
+export class Model {
 
-	constructor(protected _model: JSON) {
+	constructor(private _model: JSON) {
 
 	}
 
-	public get model(): JSON {
+	public get data(): JSON {
 		return this._model;
 	}
 }

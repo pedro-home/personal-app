@@ -10,11 +10,12 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { PageComponent } from './page/page.component';
 import { LoaderComponent } from './loader/loader.component';
-import { FormulaComponent } from './page/formula/formula.component';
-import { HistoryComponent } from './page/history/history.component';
-import { ChartComponent } from './page/chart/chart.component';
-import { ContactsComponent } from './page/contacts/contacts.component';
-import { GridComponent } from './page/grid/grid.component';
+import { SectionComponent } from './page/section/section.component';
+import { FormulaComponent } from './page/section/formula/formula.component';
+import { GridComponent } from './page/section/grid/grid.component';
+import { HistoryComponent } from './page/section/history/history.component';
+import { ChartComponent } from './page/section/chart/chart.component';
+import { ContactsComponent } from './page/section/contacts/contacts.component';
 
 @NgModule({
 	imports: [
@@ -36,6 +37,7 @@ import { GridComponent } from './page/grid/grid.component';
 		HeaderComponent,
 		FooterComponent,
 		PageComponent,
+		SectionComponent,
 		LoaderComponent,
 		FormulaComponent,
 		GridComponent,

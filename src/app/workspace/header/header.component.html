@@ -1,9 +1,9 @@
 <mat-toolbar>
 	<a mat-icon-button href="#welcome">
-		<mat-icon fontSet="fas" fontIcon="fa-{{item.home}}"></mat-icon>
+		<mat-icon fontSet="fas" fontIcon="fa-{{model.data['home']}}"></mat-icon>
 	</a>
 	<span class="mat-toolbar-spacer"></span>
-	<a *ngFor="let option of item.buttons" mat-button href="#{{option.action}}">
+	<a *ngFor="let option of model.data['buttons']" mat-button href="#{{option.action}}">
 		<span>{{ option.text }}</span>
 	</a>
 </mat-toolbar>

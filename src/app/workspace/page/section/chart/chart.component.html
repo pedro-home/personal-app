@@ -1,4 +1,4 @@
-<div *ngFor="let bar of item.data; index as i;" class="chart-bar" [style.height.px]="(size/100)+(distance)" fxLayout="row" fxLayoutAlign="stretch center" fxLayoutGap="10px">
+<div *ngFor="let bar of model.data['bars']; index as i;" class="chart-bar" [style.height.px]="(size/100)+(distance)" fxLayout="row" fxLayoutAlign="stretch center" fxLayoutGap="10px">
 	<p class="chart-name mat-body-2">{{bar.name}}</p>
 	<svg [attr.width]="(size*bar.value)/100" [attr.height]="size/100">
 		<svg:rect [attr.height]="size/100" [attr.width]="(size*bar.value)/100" />

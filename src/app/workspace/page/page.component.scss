@@ -1,21 +1,19 @@
-#welcome {
-    height: 100vh;
+:host {
+    header {
+        height: 100vh;
 
-    background: url('../../../assets/images/home.jpg') no-repeat center fixed;
-    background-size: cover;
+        background: url('../../../assets/images/home.jpg') no-repeat center fixed;
+        background-size: cover;
 
-    .container-text > * {
-        filter: drop-shadow(0px 8px 4px rgba(8,8,8,.8));
+        .container-text > * {
+            filter: drop-shadow(0px 8px 4px rgba(8,8,8,.8));
+        }
     }
-}
 
-#about {
-    .profile-image {
-        width: 256px;
-        clip-path: circle(50%);
+    #about {
+        .profile-image {
+            width: 256px;
+            clip-path: circle(50%);
+        }
     }
-}
-
-.section-container {
-    padding: 0 6rem;
 }
