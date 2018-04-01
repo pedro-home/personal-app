@@ -44,6 +44,13 @@ import { ContactsComponent } from './page/section/contacts/contacts.component';
 		HistoryComponent,
 		ChartComponent,
 		ContactsComponent
+	],
+	entryComponents: [
+		HistoryComponent,
+		GridComponent,
+		FormulaComponent,
+		ContactsComponent,
+		ChartComponent
 	]
 })
 export class WorkspaceModule {

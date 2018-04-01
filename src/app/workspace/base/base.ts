@@ -25,7 +25,7 @@ export class BaseAnimations {
 
 export class BaseComponent {
 	@Input()
-	protected model: Model;
+	public model: Model;
 }
 
 export class Model {
