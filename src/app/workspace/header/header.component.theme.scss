@@ -2,11 +2,28 @@
 
 @mixin header-theme($theme) {
     $primary: map-get($theme, primary);
+    $accent: map-get($theme, accent);
 
     app-header {
         .mat-toolbar {
-            color: white;
-            background: rgba(22,22,22,0);
+            &.toolbar-shrink {
+
+                &.mat-primary {
+                    color: mat-color($primary, default-contrast);
+                    border-bottom-color: mat-color($primary, 800);
+                }
+
+                &.mat-accent {
+                    color: mat-color($accent, default-contrast);
+                    border-bottom-color: mat-color($accent, 900);
+                }
+            }
+
+            &:not(.toolbar-shrink) {
+                color: white;
+                background-color: transparent;
+                border-bottom: 1px solid transparent;
+            }
         }
     }
 }

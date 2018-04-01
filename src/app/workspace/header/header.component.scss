@@ -3,4 +3,12 @@
     position: fixed;
     width: 100%;
     top: 0px;
+
+    mat-toolbar {
+        transition: all 0.2s;
+
+        &.toolbar-shrink {
+            filter: drop-shadow(0px 0px 4px rgba(8,8,8,.8));
+        }
+    }
 }

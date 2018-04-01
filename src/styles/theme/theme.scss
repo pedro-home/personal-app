@@ -9,7 +9,7 @@
 // Theme
 @include mat-core();
 
-$color-primary: mat-palette($mat-blue, 600);
+$color-primary: mat-palette($mat-blue, 700);
 $color-accent: mat-palette($mat-grey, 800);
 
 $theme-light: mat-light-theme($color-primary, $color-accent);
