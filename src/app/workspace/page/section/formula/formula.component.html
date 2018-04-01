@@ -11,7 +11,7 @@
 		</div>
 		<div *ngIf="!isLast" class="formula-operator" fxFlexAlign="center">
 			<span>
-				{{ i < model.data.length() - 2 ? '+' : '='}}
+				{{ i < model.data.length - 2 ? '+' : '='}}
 			</span>
 		</div>
 	</ng-container>

@@ -21,8 +21,18 @@ export class PageComponent extends BaseComponent implements OnInit {
 	}
 
 	public loadSections(): void {
+		let theme, data;
 		for (let section of this.model.data['sections'])
 		{
+			theme = section['theme'];
+			if (theme)
+			{
+				section['theme'] = 'mat-' + theme;
+			}
+
+			data = section['data'];
+			section['data'] = new Model(data);
+
 			this.sections.push(new Model(<JSON>(<Object>section)));
 		}
 	}

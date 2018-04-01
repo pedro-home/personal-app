@@ -4,7 +4,7 @@
         "buttons": [
             {
                 "text": "About",
-                "action": "presentation"
+                "action": "about"
             },
             {
                 "text": "Portfolio",
@@ -19,34 +19,55 @@
     "body": {
         "sections": [
             {
-                "title": "Ambition",
-                "component": "formula",
-                "message": "formula.json"
+                "id": "ambition",
+                "theme": "primary",
+                "data": {
+                    "title": "Ambition",
+                    "component": "formula",
+                    "message": "formula.json"
+                }
             },
             {
-                "title": "Presentation",
-                "component": "about",
-                "message": "about.json"
+                "id": "about",
+                "data": {
+                    "title": "Presentation",
+                    "component": "about",
+                    "message": "about.json"
+                }
             },
             {
-                "title": "Portfolio",
-                "component": "grid",
-                "message": "portfolio.json"
+                "id": "portfolio",
+                "theme": "accent",
+                "data": {
+                    "title": "Portfolio",
+                    "component": "grid",
+                    "message": "portfolio.json"
+                }
             },
             {
-                "title": "Experience",
-                "component": "history",
-                "message": "journey.json"
+                "id": "experience",
+                "data": {
+                    "title": "Experience",
+                    "component": "history",
+                    "message": "journey.json"
+                }
             },
             {
-                "title": "Skills",
-                "component": "chart",
-                "message": "technologies.json"
+                "id": "skills",
+                "data": {
+                    "title": "Skills",
+                    "component": "chart",
+                    "message": "technologies.json"
+                }
             },
             {
-                "title": "Contacts",
-                "component": "contacts",
-                "message": "contacts.json"
+                "id": "contacts",
+                "theme": "accent",
+                "data": {
+                    "title": "Contacts",
+                    "component": "contacts",
+                    "message": "contacts.json"
+                }
             }
         ]
     },

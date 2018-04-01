@@ -10,7 +10,7 @@
 		</a>
 	</header>
 
-	<app-section *ngFor="let section of sections; index as i" [model]="section" [attr.id]="section.data['title'].toLowerCase()" fxLayout="column" fxLayoutAlign="center" fxLayoutGap="4rem"></app-section>
+	<app-section *ngFor="let section of sections; index as i" [model]="section.data['data']" class="{{section.data['theme']}}" [attr.id]="section.data['id']" fxLayout="column" fxLayoutAlign="center" fxLayoutGap="4rem"></app-section>
 
 	<!--
 	<section id="formula" class="mat-primary" fxLayout="column" fxLayoutAlign="center" fxLayoutGap="4rem">

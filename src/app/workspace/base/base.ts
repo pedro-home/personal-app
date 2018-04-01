@@ -30,11 +30,11 @@ export class BaseComponent {
 
 export class Model {
 
-	constructor(private _model: JSON) {
+	constructor(private _data: JSON) {
 
 	}
 
 	public get data(): JSON {
-		return this._model;
+		return this._data;
 	}
 }

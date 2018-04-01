@@ -1,7 +1,12 @@
 :host {
+    display: block;
+    text-align: center;
+
     .history-milestone {
 
         .history-details {
+            text-align: left;
+
             > .history-description {
                 display: none;
             }
@@ -21,7 +26,9 @@
 
     .history-birth {
         > .history-details {
-            transform: translateX(-50%);
+            display: block;
+            margin: 0 auto;
+            position: relative;
             text-align: center;
         }
     }
