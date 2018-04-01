@@ -4,7 +4,7 @@ import { FormulaComponent } from './page/section/formula/formula.component';
 import { GridComponent } from './page/section/grid/grid.component';
 import { ContactsComponent } from './page/section/contacts/contacts.component';
 import { HistoryComponent } from './page/section/history/history.component';
-import { BaseComponent, Model } from './base/base';
+import { BindableComponent, Model } from './base/base';
 import { AboutComponent } from './page/section/about/about.component';
 
 @Injectable()
@@ -20,10 +20,10 @@ export class ComponentService {
 		let factory = this.createComponentFactory(type);
 		let component = container.createComponent(factory);
 
-		(<BaseComponent>component.instance).model = data || new Model(<JSON>{});
+		(<BindableComponent>component.instance).model = data || new Model(<JSON>{});
 	}
 
-	private getComponent(name: string): Type<BaseComponent> {
+	private getComponent(name: string): Type<BindableComponent> {
 		let component;
 		switch (name) {
 			case 'about':
@@ -51,7 +51,7 @@ export class ComponentService {
 		return component;
 	}
 
-	private createComponentFactory(component: Type<BaseComponent>): ComponentFactory<any> {
+	private createComponentFactory(component: Type<BindableComponent>): ComponentFactory<any> {
 		return this.componentFactoryResolver.resolveComponentFactory(component);
 	}
 }

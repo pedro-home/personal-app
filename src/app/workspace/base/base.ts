@@ -23,7 +23,7 @@ export class BaseAnimations {
 	];
 }
 
-export class BaseComponent {
+export class BindableComponent {
 	@Input()
 	public model: Model;
 }

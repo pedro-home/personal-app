@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild, ViewContainerRef } from '@angular/core';
-import { BaseComponent, Model } from '../../base/base';
+import { BindableComponent, Model } from '../../base/base';
 import { MessageService } from '../../message.service';
 import { ComponentService } from '../../component.service';
 
@@ -9,7 +9,7 @@ import { ComponentService } from '../../component.service';
 	styleUrls: ['./section.component.scss'],
 	providers: [MessageService, ComponentService]
 })
-export class SectionComponent extends BaseComponent implements OnInit {
+export class SectionComponent extends BindableComponent implements OnInit {
 
 	@ViewChild('componentContainer', { read: ViewContainerRef })
 	private componentContainer: ViewContainerRef;

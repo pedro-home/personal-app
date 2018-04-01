@@ -1,12 +1,12 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { BaseComponent } from '../../../base/base';
+import { BindableComponent } from '../../../base/base';
 
 @Component({
 	selector: 'app-formula',
 	templateUrl: './formula.component.html',
 	styleUrls: ['./formula.component.scss']
 })
-export class FormulaComponent extends BaseComponent implements OnInit {
+export class FormulaComponent extends BindableComponent implements OnInit {
 
 	ngOnInit() {
 

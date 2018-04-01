@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { BaseComponent, Model } from '../base/base';
+import { BindableComponent, Model } from '../base/base';
 
 @Component({
 	selector: 'app-page',
 	templateUrl: './page.component.html',
 	styleUrls: ['./page.component.scss']
 })
-export class PageComponent extends BaseComponent implements OnInit {
+export class PageComponent extends BindableComponent implements OnInit {
 
 	private sections: Array<Model>;
 

@@ -1,12 +1,12 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { BaseComponent } from '../../../base/base';
+import { BindableComponent } from '../../../base/base';
 
 @Component({
 	selector: 'app-history',
 	templateUrl: './history.component.html',
 	styleUrls: ['./history.component.scss']
 })
-export class HistoryComponent extends BaseComponent implements OnInit {
+export class HistoryComponent extends BindableComponent implements OnInit {
 
 	private size: number;
 	private distance: number;
