@@ -45,7 +45,7 @@ export class ComponentService {
 				component = HistoryComponent;
 				break;
 			default:
-				throw 'Cannot find specific component '+ name +'!';
+				throw `Cannot find specific component ${name}!`;
 		}
 
 		return component;

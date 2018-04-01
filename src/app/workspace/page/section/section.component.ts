@@ -23,7 +23,7 @@ export class SectionComponent extends BindableComponent implements OnInit {
 	}
 
 	private loadComponent(): void {
-		this.messageService.processMessage('sections/'+this.model.data['message'])
+		this.messageService.processMessage(`sections/${this.model.data['message']}`)
 		.subscribe(message => {
 			this.componentService.createComponent(this.componentContainer, this.model.data['component'], new Model(message.json()));
 		});

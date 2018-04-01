@@ -27,7 +27,7 @@ export class PageComponent extends BindableComponent implements OnInit {
 			theme = section['theme'];
 			if (theme)
 			{
-				section['theme'] = 'mat-' + theme;
+				section['theme'] = `mat-${theme}`;
 			}
 
 			data = section['data'];
