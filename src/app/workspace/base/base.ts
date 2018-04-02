@@ -23,6 +23,9 @@ export class BaseAnimations {
 	];
 }
 
+@Component({
+	selector: 'app-bindable'
+})
 export class BindableComponent {
 	@Input()
 	public model: Model;

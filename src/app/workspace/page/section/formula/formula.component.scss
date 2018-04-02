@@ -18,21 +18,31 @@
         height: $icon-size-l;
 
         > .mat-icon {
+            transition: transform $animation-duration;
             @include add-icon-size($icon-size-l);
         }
 
 
-        .variable-description > :last-child {
-            display: none;
+        .variable-description {
+            transition: transform $animation-duration;
+
+            > :last-child {
+                transition: opacity $animation-duration;
+                opacity: 0;
+            }
         }
 
         &:hover {
             > .mat-icon {
-                @include add-icon-size($icon-size-xl);
+                transform: scale(2);
             }
 
-            .variable-description > :last-child {
-                display: block;
+            .variable-description {
+                transform: translateY($icon-size-l/2);
+
+                > :last-child {
+                    opacity: 1;
+                }
             }
         }
     }

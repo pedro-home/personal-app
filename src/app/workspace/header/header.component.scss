@@ -1,3 +1,5 @@
+@import '../../../styles/common/base/variables';
+
 :host {
     z-index: 1;
     position: fixed;
@@ -5,9 +7,9 @@
     top: 0px;
 
     mat-toolbar {
-        transition: all 0.2s;
+        transition: all $animation-duration;
 
-        &.toolbar-shrink {
+        &.toolbar-show {
             filter: drop-shadow(0px 0px 4px rgba(8,8,8,.8));
         }
     }

@@ -11,18 +11,18 @@ import { DomService } from '../dom.service';
 })
 export class HeaderComponent extends BindableComponent implements OnInit {
 
-	private shrinkToolbar: boolean;
+	private showToolbar: boolean;
 
 	constructor(private rendererService: RendererService, private domService: DomService) {
 		super();
 
-		this.shrinkToolbar = false;
+		this.showToolbar = false;
 	}
 
 	ngOnInit(): void {
 		this.rendererService.on('window', 'scroll', (event: any) => {
 			let doc = this.domService.document.documentElement;
-			this.shrinkToolbar = (doc.scrollTop > doc.clientHeight/2);
+			this.showToolbar = (doc.scrollTop > doc.clientHeight/2);
 		});
 	}
 }

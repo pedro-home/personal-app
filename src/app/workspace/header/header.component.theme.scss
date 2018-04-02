@@ -6,7 +6,7 @@
 
     app-header {
         .mat-toolbar {
-            &.toolbar-shrink {
+            &.toolbar-show {
 
                 &.mat-primary {
                     color: mat-color($primary, default-contrast);
@@ -19,7 +19,7 @@
                 }
             }
 
-            &:not(.toolbar-shrink) {
+            &:not(.toolbar-show) {
                 color: white;
                 background-color: transparent;
                 border-bottom: 1px solid transparent;
