@@ -4,15 +4,15 @@
         "buttons": [
             {
                 "text": "About",
-                "action": "about"
+                "action": "#about"
             },
             {
                 "text": "Portfolio",
-                "action": "portfolio"
+                "action": "#portfolio"
             },
             {
                 "text": "Contacts",
-                "action": "contacts"
+                "action": "#contacts"
             }
         ]
     },

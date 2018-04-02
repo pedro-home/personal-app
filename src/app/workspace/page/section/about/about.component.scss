@@ -1,8 +1,12 @@
 :host {
     .profile-image {
-        display: block;
-        margin: 0 auto 4rem auto;
         width: 256px;
-        clip-path: circle(50%);
+        height: 256px;
+        margin: 0 auto 4rem auto;
+
+        img {
+            width: 100%;
+            clip-path: circle(50%);
+        }
     }
 }

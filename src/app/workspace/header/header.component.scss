@@ -6,9 +6,13 @@
     width: 100%;
     top: 0px;
 
-    mat-toolbar {
+    .mat-toolbar {
         transition: all $animation-duration;
 
+        .mat-button {
+            transition: color $animation-duration;
+        }
+        
         &.toolbar-show {
             filter: drop-shadow(0px 0px 4px rgba(8,8,8,.8));
         }

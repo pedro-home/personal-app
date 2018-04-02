@@ -11,11 +11,23 @@
                 &.mat-primary {
                     color: mat-color($primary, default-contrast);
                     border-bottom-color: mat-color($primary, 800);
+
+                    .mat-button {
+                        &.button-highlight {
+                            color: mat-color($accent);
+                        }
+                    }
                 }
 
                 &.mat-accent {
                     color: mat-color($accent, default-contrast);
                     border-bottom-color: mat-color($accent, 900);
+
+                    .mat-button {
+                        &.button-highlight {
+                            color: mat-color($primary);
+                        }
+                    }
                 }
             }
 
