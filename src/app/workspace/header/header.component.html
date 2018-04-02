@@ -1,9 +1,9 @@
 <mat-toolbar class="mat-primary" [class.toolbar-shrink]="shrinkToolbar">
-	<a mat-icon-button href="#home">
+	<a mat-icon-button scrollTo href="#home" scrollOffSet="64">
 		<mat-icon fontSet="fas" fontIcon="fa-{{model.data['home']}}"></mat-icon>
 	</a>
 	<span class="mat-toolbar-spacer"></span>
-	<a *ngFor="let option of model.data['buttons']" mat-button href="#{{option.action}}">
+	<a *ngFor="let option of model.data['buttons']" scrollTo mat-button href="#{{option.action}}" scrollOffSet="100">
 		<span>{{ option.text }}</span>
 	</a>
 </mat-toolbar>

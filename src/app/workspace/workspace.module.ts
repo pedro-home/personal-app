@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpModule } from '@angular/http';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import {ScrollToModule} from 'ng2-scroll-to';
 
 import { MatToolbarModule, MatButtonModule, MatIconModule, MatProgressSpinnerModule, MatDialogModule, MatGridListModule } from '@angular/material';
 
@@ -23,6 +24,7 @@ import { AboutComponent } from './page/section/about/about.component';
 		CommonModule,
 		HttpModule,
 		FlexLayoutModule,
+		ScrollToModule.forRoot(),
 
 		// Material
 		MatToolbarModule,
