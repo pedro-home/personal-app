@@ -2,7 +2,6 @@ import { Injectable, ViewContainerRef, ComponentFactoryResolver, ComponentFactor
 import { ChartComponent } from './page/section/chart/chart.component';
 import { FormulaComponent } from './page/section/formula/formula.component';
 import { GridComponent } from './page/section/grid/grid.component';
-import { ContactsComponent } from './page/section/contacts/contacts.component';
 import { HistoryComponent } from './page/section/history/history.component';
 import { BindableComponent, Model } from './base/base';
 import { AboutComponent } from './page/section/about/about.component';
@@ -31,9 +30,6 @@ export class ComponentService {
 				break;
 			case 'chart':
 				component = ChartComponent;
-				break;
-			case 'contacts':
-				component = ContactsComponent;
 				break;
 			case 'formula':
 				component = FormulaComponent;

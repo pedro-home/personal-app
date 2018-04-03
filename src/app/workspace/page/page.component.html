@@ -15,13 +15,13 @@
 	<footer id="contacts" fxLayout="column" fxLayoutAlign="center">
 		<div class="contacts-container" fxLayout="row" fxLayoutAlign="center" fxLayoutGap="4rem">
 			<div class="contacts-contact">
-				<div *ngFor="let contact of model.data['contact']">
+				<div *ngFor="let contact of model.data['information']['contacts']['personal']">
 					<mat-icon fontIcon="fa-{{contact.icon}}"></mat-icon>
 					<span>{{contact.value}}</span>
 				</div>
 			</div>
 			<div class="contacts-social">
-				<a *ngFor="let social of model.data['social']" mat-raised-button color="primary" href="{{social.url}}"> 
+				<a *ngFor="let social of model.data['information']['contacts']['social']" mat-raised-button color="primary" href="{{social.url}}"> 
 					<mat-icon fontSet="fab" fontIcon="fa-{{social.icon}}"></mat-icon>
 				</a>
 			</div>

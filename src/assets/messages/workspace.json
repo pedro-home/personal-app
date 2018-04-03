@@ -21,8 +21,12 @@
             "name": "Pedro Gomes",
             "role": "Software Engineer",
             "contacts": {
-                "email": "pedro.work.92@gmail.com",
-                "phone": "+351 918335271",
+                "personal": [
+                    {
+                        "email": "pedro.work.92@gmail.com",
+                        "phone": "+351 918335271"
+                    }
+                ],
                 "social": [
                     {
                         "name": "github",
@@ -92,15 +96,6 @@
                     "title": "Skills",
                     "component": "chart",
                     "message": "technologies.json"
-                }
-            },
-            {
-                "id": "contacts",
-                "theme": "accent",
-                "data": {
-                    "title": "Contacts",
-                    "component": "contacts",
-                    "message": "contacts.json"
                 }
             }
         ]
