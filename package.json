@@ -14,7 +14,7 @@
     "type": "git",
     "url": "portfolio-application"
   },
-  "author": "pedro.gomes",
+  "author": "Pedro Gomes",
   "private": true,
   "dependencies": {
     "@angular/animations": "^5.2.7",

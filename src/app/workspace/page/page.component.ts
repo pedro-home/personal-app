@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { BindableComponent, Model } from '../base/base';
+import { environment } from '../../../environments/environment';
 
 @Component({
 	selector: 'app-page',
@@ -9,11 +10,14 @@ import { BindableComponent, Model } from '../base/base';
 export class PageComponent extends BindableComponent implements OnInit {
 
 	private sections: Array<Model>;
+	private static VERSION: string = environment.VERSION;
+	private static AUTHOR: string = environment.AUTHOR;
 
 	constructor() {
 		super();
 
 		this.sections = [];
+
 	}
 
 	ngOnInit(): void {

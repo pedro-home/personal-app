@@ -11,4 +11,25 @@
 	</header>
 
 	<app-section *ngFor="let section of sections; index as i" [model]="section.data['data']" class="{{section.data['theme']}}" [attr.id]="section.data['id']" fxLayout="column" fxLayoutAlign="center" fxLayoutGap="4rem"></app-section>
+
+	<footer id="contacts" fxLayout="column" fxLayoutAlign="center">
+		<div class="contacts-container" fxLayout="row" fxLayoutAlign="center" fxLayoutGap="4rem">
+			<div class="contacts-contact">
+				<div *ngFor="let contact of model.data['contact']">
+					<mat-icon fontIcon="fa-{{contact.icon}}"></mat-icon>
+					<span>{{contact.value}}</span>
+				</div>
+			</div>
+			<div class="contacts-social">
+				<a *ngFor="let social of model.data['social']" mat-raised-button color="primary" href="{{social.url}}"> 
+					<mat-icon fontSet="fab" fontIcon="fa-{{social.icon}}"></mat-icon>
+				</a>
+			</div>
+		</div>
+		<mat-toolbar class="mat-toolbar-size-small">
+			<span class="mat-caption">Made with <mat-icon class="mat-icon-caption" style="vertical-align: text-bottom;" fontIcon="fa-favorite"></mat-icon> by {{AUTHOR}}</span>
+			<span class="mat-toolbar-spacer"></span>
+			<span class="mat-caption">Current Version: {{VERSION}}</span>
+		</mat-toolbar>
+	</footer>
 </div>
