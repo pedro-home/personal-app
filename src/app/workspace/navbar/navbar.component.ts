@@ -4,12 +4,12 @@ import { RendererService } from '../renderer.service';
 import { DomService } from '../dom.service';
 
 @Component({
-	selector: 'app-header',
-	templateUrl: './header.component.html',
-	styleUrls: ['./header.component.scss'],
+	selector: 'app-navbar',
+	templateUrl: './navbar.component.html',
+	styleUrls: ['./navbar.component.scss'],
 	providers: [DomService, RendererService]
 })
-export class HeaderComponent extends BindableComponent implements OnInit {
+export class NavbarComponent extends BindableComponent implements OnInit {
 
 	private showToolbar: boolean;
 	private highlightButton: boolean;
@@ -23,17 +23,19 @@ export class HeaderComponent extends BindableComponent implements OnInit {
 
 	ngOnInit(): void {
 
+		let doc = this.domService.document;
+		let docElem = doc.documentElement;
+
+		let id, elem;
+		let threshold;
+		let fullHeight = docElem.offsetHeight;
+
 		// TODO Increase performance on scroll event
 		this.rendererService.on('window', 'scroll', (event: any) => {
-			let doc = this.domService.document;
-			let docElem = doc.documentElement;
 			this.showToolbar = (docElem.scrollTop > docElem.clientHeight/2);
-
-			let id, elem;
-			let threshold = (docElem.scrollTop + docElem.clientHeight/4);
-			let fullHeight = docElem.offsetHeight;
 			for (let button of this.model.data['buttons'])
 			{
+				threshold = (docElem.scrollTop + docElem.clientHeight/4);
 				button['highlight'] = false;
 
 				id = button['action'];

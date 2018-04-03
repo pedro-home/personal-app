@@ -7,8 +7,6 @@ import {ScrollToModule} from 'ng2-scroll-to';
 import { MatToolbarModule, MatButtonModule, MatIconModule, MatProgressSpinnerModule, MatDialogModule, MatGridListModule } from '@angular/material';
 
 import { WorkspaceComponent } from './workspace.component';
-import { HeaderComponent } from './header/header.component';
-import { FooterComponent } from './footer/footer.component';
 import { PageComponent } from './page/page.component';
 import { LoaderComponent } from './loader/loader.component';
 import { SectionComponent } from './page/section/section.component';
@@ -16,8 +14,8 @@ import { FormulaComponent } from './page/section/formula/formula.component';
 import { GridComponent } from './page/section/grid/grid.component';
 import { HistoryComponent } from './page/section/history/history.component';
 import { ChartComponent } from './page/section/chart/chart.component';
-import { ContactsComponent } from './page/section/contacts/contacts.component';
 import { AboutComponent } from './page/section/about/about.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 @NgModule({
 	imports: [
@@ -37,8 +35,7 @@ import { AboutComponent } from './page/section/about/about.component';
 	exports: [WorkspaceComponent],
 	declarations: [
 		WorkspaceComponent,
-		HeaderComponent,
-		FooterComponent,
+		NavbarComponent,
 		PageComponent,
 		LoaderComponent,
 		SectionComponent,
@@ -46,15 +43,13 @@ import { AboutComponent } from './page/section/about/about.component';
 		FormulaComponent,
 		GridComponent,
 		HistoryComponent,
-		ChartComponent,
-		ContactsComponent
+		ChartComponent
 	],
 	entryComponents: [
 		AboutComponent,
 		HistoryComponent,
 		GridComponent,
 		FormulaComponent,
-		ContactsComponent,
 		ChartComponent
 	]
 })

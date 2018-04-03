@@ -1,10 +1,10 @@
 @import '~@angular/material/theming';
 
-@mixin header-theme($theme) {
+@mixin navbar-theme($theme) {
     $primary: map-get($theme, primary);
     $accent: map-get($theme, accent);
 
-    app-header {
+    app-navbar {
         .mat-toolbar {
             &.toolbar-show {
 

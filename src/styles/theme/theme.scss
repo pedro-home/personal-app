@@ -1,6 +1,6 @@
 @import '~@angular/material/theming';
 @import '../app/workspace/workspace.component.theme';
-@import '../app/workspace/header/header.component.theme';
+@import '../app/workspace/navbar/navbar.component.theme';
 @import '../app/workspace/page/page.component.theme';
 @import '../app/workspace/page/section/section.component.theme';
 @import '../app/workspace/page/section/history/history.component.theme';
@@ -19,7 +19,7 @@ $theme-dark: mat-dark-theme($color-primary, $color-accent);
 	@include angular-material-theme($theme);
 
 	@include workspace-theme($theme);
-	@include header-theme($theme);
+	@include navbar-theme($theme);
 	@include page-theme($theme);
 	@include section-theme($theme);
 	@include history-theme($theme);

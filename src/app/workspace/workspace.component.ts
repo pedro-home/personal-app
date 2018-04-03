@@ -14,7 +14,7 @@ import { MatIconRegistry } from '@angular/material';
 
 export class WorkspaceComponent implements AfterContentInit {
 
-	private header: Model;
+	private navbar: Model;
 	private page: Model;
 	private footer: Model;
 	private loader: Model;
@@ -42,8 +42,8 @@ export class WorkspaceComponent implements AfterContentInit {
 		this.messageService.processMessage('workspace.json')
 		.subscribe(message => {
 			let json = message.json();
-			this.header = new Model(json['header']);
-			this.page = new Model(json['body']);
+			this.navbar = new Model(json['navbar']);
+			this.page = new Model(json['page']);
 			this.footer = new Model(json['footer']);
 
 			this.loaded = true;
