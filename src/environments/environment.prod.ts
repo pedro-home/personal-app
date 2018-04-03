@@ -1,5 +1,5 @@
 export const environment = {
   production: true,
-  VERSION: require('../../package.json').version,
-  AUTHOR: require('../../package.json').author
+  version: require('../../package.json').version,
+  author: require('../../package.json').author
 };

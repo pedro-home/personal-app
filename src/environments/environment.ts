@@ -5,6 +5,6 @@
 
 export const environment = {
 	production: false,
-	VERSION: require('../../package.json').version,
-	AUTHOR: require('../../package.json').author
+	version: require('../../package.json').version,
+	author: require('../../package.json').author
 };

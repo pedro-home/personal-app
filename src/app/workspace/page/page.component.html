@@ -16,20 +16,20 @@
 		<div class="contacts-container" fxLayout="row" fxLayoutAlign="center" fxLayoutGap="4rem">
 			<div class="contacts-contact">
 				<div *ngFor="let contact of model.data['information']['contacts']['personal']">
-					<mat-icon fontIcon="fa-{{contact.icon}}"></mat-icon>
-					<span>{{contact.value}}</span>
+					<mat-icon fontIcon="fa-{{contact.name}}"></mat-icon>
+					<span>{{contact.text}}</span>
 				</div>
 			</div>
 			<div class="contacts-social">
 				<a *ngFor="let social of model.data['information']['contacts']['social']" mat-raised-button color="primary" href="{{social.url}}"> 
-					<mat-icon fontSet="fab" fontIcon="fa-{{social.icon}}"></mat-icon>
+					<mat-icon fontSet="fab" fontIcon="fa-{{social.name}}"></mat-icon>
 				</a>
 			</div>
 		</div>
-		<mat-toolbar class="mat-toolbar-size-small">
-			<span class="mat-caption">Made with <mat-icon class="mat-icon-caption" style="vertical-align: text-bottom;" fontIcon="fa-favorite"></mat-icon> by {{AUTHOR}}</span>
+		<mat-toolbar class="mat-toolbar-size-small" color="accent">
+			<span class="mat-caption">Made with <mat-icon class="mat-icon-caption" style="vertical-align: text-bottom;" fontIcon="fa-heart"></mat-icon> by {{author}}</span>
 			<span class="mat-toolbar-spacer"></span>
-			<span class="mat-caption">Current Version: {{VERSION}}</span>
+			<span class="mat-caption">Current Version: {{version}}</span>
 		</mat-toolbar>
 	</footer>
 </div>

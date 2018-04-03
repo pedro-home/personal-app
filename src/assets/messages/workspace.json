@@ -23,8 +23,12 @@
             "contacts": {
                 "personal": [
                     {
-                        "email": "pedro.work.92@gmail.com",
-                        "phone": "+351 918335271"
+                        "name": "email",
+                        "text": "pedro.work.92@gmail.com"
+                    },
+                    {
+                        "name": "phone",
+                        "text": "+351 918335271"
                     }
                 ],
                 "social": [

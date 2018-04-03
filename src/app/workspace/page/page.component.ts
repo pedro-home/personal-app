@@ -10,14 +10,16 @@ import { environment } from '../../../environments/environment';
 export class PageComponent extends BindableComponent implements OnInit {
 
 	private sections: Array<Model>;
-	private static VERSION: string = environment.VERSION;
-	private static AUTHOR: string = environment.AUTHOR;
+
+	public author: string;
+	public version: string;
 
 	constructor() {
 		super();
 
 		this.sections = [];
-
+		this.author = environment.author;
+		this.version = environment.version;
 	}
 
 	ngOnInit(): void {
