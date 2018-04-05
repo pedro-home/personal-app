@@ -4,7 +4,7 @@ import { HttpModule } from '@angular/http';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import {ScrollToModule} from 'ng2-scroll-to';
 
-import { MatToolbarModule, MatButtonModule, MatIconModule, MatProgressSpinnerModule, MatDialogModule, MatGridListModule } from '@angular/material';
+import { MatToolbarModule, MatButtonModule, MatIconModule, MatProgressSpinnerModule, MatDialogModule, MatGridListModule, MatMenuModule } from '@angular/material';
 
 import { WorkspaceComponent } from './workspace.component';
 import { PageComponent } from './page/page.component';
@@ -26,6 +26,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 
 		// Material
 		MatToolbarModule,
+		MatMenuModule,
 		MatButtonModule,
 		MatIconModule,
 		MatDialogModule,

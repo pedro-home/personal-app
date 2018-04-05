@@ -1,9 +1,20 @@
-<mat-toolbar class="mat-primary animated" [class.toolbar-show]="showToolbar">
+<mat-toolbar class="animated" color="primary" [class.toolbar-show]="showToolbar">
 	<a mat-icon-button scrollTo href="#home">
 		<mat-icon fontSet="fas" fontIcon="fa-{{model.data['home']}}"></mat-icon>
 	</a>
 	<span class="mat-toolbar-spacer"></span>
-	<a *ngFor="let button of model.data['buttons'];" scrollTo mat-button href="{{button.action}}" [class.button-highlight]="button['highlight']">
-		<span>{{ button.text }}</span>
-	</a>
+	<div class="navbar-buttons" fxLayout="row" fxLayoutGap="0.6rem">
+		<a *ngFor="let button of model.data['buttons'];" scrollTo mat-button href="{{button.action}}" [class.button-highlight]="button['highlight']">
+			<span>{{ button.text }}</span>
+		</a>
+
+		<button mat-button [matMenuTriggerFor]="downloadMenu" class="download-button">
+			<span>Download</span>
+		</button>
+	</div>
 </mat-toolbar>
+
+<mat-menu #downloadMenu="matMenu" xPosition="before" yPosition="below" [overlapTrigger]="false" class="mat-primary">
+	<a mat-menu-item href="https://drive.google.com/file/d/1b2zlIAKF-WOKOD1VRnnJQqOjA9yJt1a8/view?usp=sharing">CV</a>
+	<a mat-menu-item href="https://drive.google.com/file/d/1fyuLikYB3I8Szw3mxrHi0OxUCXyUJFm_/view?usp=sharing">CV (incl. Portfolio)</a>
+</mat-menu>

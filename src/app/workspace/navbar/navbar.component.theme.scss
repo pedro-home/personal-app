@@ -16,6 +16,15 @@
                         &.button-highlight {
                             color: mat-color($accent);
                         }
+
+                        &.download-button {
+                            border: 1px solid mat-color($accent);
+
+                            &:hover {
+                                color: mat-color($accent, default-contrast);
+                                background-color: mat-color($accent);
+                            }
+                        }
                     }
                 }
 
@@ -35,6 +44,19 @@
                 color: white;
                 background-color: transparent;
                 border-bottom: 1px solid transparent;
+
+                &.mat-primary {
+                    .mat-button {
+                        &.download-button {
+                            border: 1px solid mat-color($primary);
+
+                            &:hover {
+                                color: mat-color($primary, default-contrast);
+                                background-color: mat-color($primary);
+                            }
+                        }
+                    }
+                }
             }
         }
     }
