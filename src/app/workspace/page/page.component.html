@@ -5,31 +5,33 @@
 			<h1 class="mat-display-4">{{model.data['information']['name']}}</h1>
 			<h2 class="mat-display-1">{{model.data['information']['role']}}</h2>
 		</div>
-		<a mat-mini-fab scrollTo color="primary" href="#{{sections[0].data['id']}}" scrollOffset="64px">
+		<a mat-mini-fab scrollTo color="primary" href="#{{sections[0].data['id']}}">
 			<mat-icon fontSet="fas" fontIcon="fa-angle-double-down"></mat-icon>
 		</a>
 	</header>
 
 	<app-section *ngFor="let section of sections; index as i" [model]="section.data['data']" class="{{section.data['theme']}}" [attr.id]="section.data['id']" fxLayout="column" fxLayoutAlign="center" fxLayoutGap="4rem"></app-section>
 
-	<footer id="contacts" fxLayout="column" fxLayoutAlign="center">
-		<div class="contacts-container" fxLayout="row" fxLayoutAlign="center" fxLayoutGap="4rem">
-			<div class="contacts-contact">
-				<div *ngFor="let contact of model.data['information']['contacts']['personal']">
-					<mat-icon fontIcon="fa-{{contact.name}}"></mat-icon>
-					<span>{{contact.text}}</span>
-				</div>
-			</div>
-			<div class="contacts-social">
-				<a *ngFor="let social of model.data['information']['contacts']['social']" mat-raised-button color="primary" href="{{social.url}}"> 
-					<mat-icon fontSet="fab" fontIcon="fa-{{social.name}}"></mat-icon>
-				</a>
+	<footer id="contacts" fxLayout="row">
+		<div class="footer-contacts" fxLayout="column" fxLayoutAlign="center" fxLayoutGap="1rem">
+			<div *ngFor="let contact of model.data['information']['contacts']['personal']" class="footer-contact" fxLayout="row" fxLayoutAlign="strech center" fxLayoutGap="1rem">
+				<mat-icon color="primary" fontIcon="fa-{{contact.icon}}"></mat-icon>
+				<h2 class="mat-title">{{contact.text}}</h2>
 			</div>
 		</div>
-		<mat-toolbar class="mat-toolbar-size-small" color="accent">
-			<span class="mat-caption">Made with <mat-icon class="mat-icon-caption" style="vertical-align: text-bottom;" fontIcon="fa-heart"></mat-icon> by {{author}}</span>
-			<span class="mat-toolbar-spacer"></span>
-			<span class="mat-caption">Current Version: {{version}}</span>
-		</mat-toolbar>
+		<div class="footer-application" fxLayout="column" fxLayoutAlign="center" fxLayoutGap="1rem">
+			<div class="application-container mat-body-2">
+				<h1 class="mat-headline">About the application:</h1>
+				<p>The current version of Personal App is {{version}} - this is NOT the final version! There is still a lot of features and improvements that will be implemented in a near future.</p>
+				<p>Personal App was made with <mat-icon color="primary" class="mat-icon-caption" style="vertical-align: text-bottom;" fontIcon="fa-heart"></mat-icon> by {{author}} for YOU.</p>
+			</div>
+			<div class="social-container" fxLayout="row" fxAlign="center" fxLayoutGap="1rem">
+				<div *ngFor="let social of model.data['information']['contacts']['social']">
+					<a href="{{social.url}}" mat-mini-fab color="primary">
+						<mat-icon fontSet="fab" fontIcon="fa-{{social.name}}"></mat-icon>
+					</a>
+				</div>
+			</div>
+		</div>
 	</footer>
 </div>

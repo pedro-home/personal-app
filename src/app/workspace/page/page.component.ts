@@ -23,10 +23,33 @@ export class PageComponent extends BindableComponent implements OnInit {
 	}
 
 	ngOnInit(): void {
+		this.loadFooter();
 		this.loadSections();
 	}
 
-	public loadSections(): void {
+	private loadFooter(): void {
+		let icon;
+		for (let contact of this.model.data['information']['contacts']['personal'])
+		{
+			switch(contact['name']) {
+				case 'localization':
+					icon = 'map-marker-alt';
+					break;
+				case 'phone':
+					icon = 'mobile-alt';
+					break;
+				case 'email':
+					icon = 'envelope';
+					break;
+				default:
+					icon = contact['name'];
+			}
+
+			contact['icon'] = icon;
+		}
+	}
+
+	private loadSections(): void {
 		let theme, data;
 		for (let section of this.model.data['sections'])
 		{
