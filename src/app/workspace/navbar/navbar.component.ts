@@ -26,13 +26,12 @@ export class NavbarComponent extends BindableComponent implements OnInit {
 		let doc = this.domService.document;
 		let docElem = doc.documentElement;
 
-		let id, elem;
-		let threshold;
-		let fullHeight = docElem.offsetHeight;
+		let id, elem, threshold, fullHeight;
 
 		// TODO Increase performance on scroll event
 		this.rendererService.on('window', 'scroll', (event: any) => {
 			this.showToolbar = (docElem.scrollTop > docElem.clientHeight/2);
+			fullHeight = docElem.offsetHeight;
 			for (let button of this.model.data['buttons'])
 			{
 				threshold = (docElem.scrollTop + docElem.clientHeight/4);
