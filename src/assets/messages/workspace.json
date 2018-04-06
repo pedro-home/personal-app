@@ -7,10 +7,6 @@
                 "action": "#about"
             },
             {
-                "text": "Portfolio",
-                "action": "#portfolio"
-            },
-            {
                 "text": "Contacts",
                 "action": "#contacts"
             }
@@ -79,15 +75,6 @@
                     "title": "Presentation",
                     "component": "about",
                     "message": "about.json"
-                }
-            },
-            {
-                "id": "portfolio",
-                "theme": "accent",
-                "data": {
-                    "title": "Portfolio",
-                    "component": "grid",
-                    "message": "portfolio.json"
                 }
             },
             {
