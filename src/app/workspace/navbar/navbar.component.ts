@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, AfterViewInit } from '@angular/core';
 import { BindableComponent } from '../base/base';
 import { RendererService } from '../renderer.service';
 import { DomService } from '../dom.service';
@@ -9,7 +9,7 @@ import { DomService } from '../dom.service';
 	styleUrls: ['./navbar.component.scss'],
 	providers: [DomService, RendererService]
 })
-export class NavbarComponent extends BindableComponent implements OnInit {
+export class NavbarComponent extends BindableComponent implements AfterViewInit {
 
 	private showToolbar: boolean;
 	private highlightButton: boolean;
@@ -21,7 +21,7 @@ export class NavbarComponent extends BindableComponent implements OnInit {
 		this.highlightButton = false;
 	}
 
-	ngOnInit(): void {
+	ngAfterViewInit(): void {
 
 		let doc = this.domService.document;
 		let docElem = doc.documentElement;
