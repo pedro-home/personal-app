@@ -1,0 +1,26 @@
+{
+    "birth": "1992",
+    "milestones":
+    [
+        {
+            "year": ["2017", "PRESENT"],
+            "title": "PRODUCT DEVELOPER",
+            "description": "At the moment, I'm working as a Product developer of FRAMES, creating new tools for the market, improving the framework's performance and support, with new technology, and diagnosing, reporting and fixing issues, from trivial to maximum complexity."
+        },
+        {
+            "year": ["2016", "2017"],
+            "title": "WEB UI DEVELOPER",
+            "description": "Morphis gave me the opportunity to work as a Front-end developer and to be part of the company itself, which I gladly accepted. My main role was to create a qualified UI workspace, supporting a positional and responsive layout using our own framework, FRAMES. I also had the responsibility to develop UI components and properties, support and train the client's and Morphis' technical team (in Brazil and Portugal), and solve the client's requests with quality code, test assurance and in time delivery."
+        },
+        {
+            "year": ["2015", "2016"],
+            "title": "IT TECHNICAL CONSULTANT",
+            "description": "I started working as an IT Technical Consulting, at Aubay. My assignment was to guarantee the transformation's success, from Oracle Forms (old and paid technology) to Java (recent and free technology), which corresponds to: transform and extend forms, apply code completion, write documentation, diagnose code and report and solve issues, analyze forms' business logic and test code's quality."
+        },
+        {
+            "year": ["2010", "2014"],
+            "title": "GRADUATE",
+            "description": "I got my degree in Computer Engineering and Multimedia, with an average grade of 16, at ISEL. It promotes 4 major subjects: ENGINEERING (Physics, Mathematics, Statistics, Economy, Geometry), MULTIMEDIA (Modelling, Animation, Processing, Encoding, Interaction), PROGRAMMING (AI, Synchronism, Web, Database) and COMPUTING NETWORK (Messages, Protocols, Streaming, VoIP, IP Addressing, Security)."
+        }
+    ]
+}
