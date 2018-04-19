@@ -1,6 +1,6 @@
 {
   "name": "portfolio-application",
-  "version": "DEVELOP",
+  "version": "latest",
   "license": "MIT",
   "scripts": {
     "ng": "ng",
