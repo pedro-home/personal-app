@@ -1,6 +1,5 @@
 {
   "name": "personal-app",
-  "version": "0.0.1-alpha",
   "license": "MIT",
   "scripts": {
     "ng": "ng",
