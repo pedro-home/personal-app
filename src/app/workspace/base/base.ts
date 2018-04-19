@@ -24,7 +24,8 @@ export class BaseAnimations {
 }
 
 @Component({
-	selector: 'app-bindable'
+	selector: 'app-bindable',
+	template: '<div></div>'
 })
 export class BindableComponent {
 	@Input()

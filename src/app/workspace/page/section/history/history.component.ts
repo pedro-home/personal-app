@@ -6,10 +6,10 @@ import { BindableComponent } from '../../../base/base';
 	templateUrl: './history.component.html',
 	styleUrls: ['./history.component.scss']
 })
-export class HistoryComponent extends BindableComponent implements OnInit {
+export class HistoryComponent extends BindableComponent {
 
-	private size: number;
-	private distance: number;
+	size: number;
+	distance: number;
 
 	constructor() {
 		super();
@@ -17,8 +17,4 @@ export class HistoryComponent extends BindableComponent implements OnInit {
 		this.size = 14;
 		this.distance = 200;
 	}
-
-	ngOnInit() {
-	}
-
 }

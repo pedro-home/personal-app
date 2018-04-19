@@ -6,18 +6,15 @@ import { BindableComponent } from '../../../base/base';
 	templateUrl: './chart.component.html',
 	styleUrls: ['./chart.component.scss']
 })
-export class ChartComponent extends BindableComponent implements OnInit {
+export class ChartComponent extends BindableComponent {
 
-	private size: number;
-	private distance: number;
+	size: number;
+	distance: number;
 
 	constructor() {
 		super();
 
 		this.size = 1000;
 		this.distance = 25;
-	}
-
-	ngOnInit() {
 	}
 }

@@ -11,8 +11,8 @@ import { DomService } from '../dom.service';
 })
 export class NavbarComponent extends BindableComponent implements AfterViewInit {
 
-	private showToolbar: boolean;
-	private highlightButton: boolean;
+	showToolbar: boolean;
+	highlightButton: boolean;
 
 	constructor(private rendererService: RendererService, private domService: DomService) {
 		super();

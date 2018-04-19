@@ -9,10 +9,10 @@ import { environment } from '../../../environments/environment';
 })
 export class PageComponent extends BindableComponent implements OnInit {
 
-	private sections: Array<Model>;
+	sections: Array<Model>;
 
-	public author: string;
-	public version: string;
+	author: string;
+	version: string;
 
 	constructor() {
 		super();

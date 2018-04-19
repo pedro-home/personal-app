@@ -16,6 +16,7 @@ import { HistoryComponent } from './page/section/history/history.component';
 import { ChartComponent } from './page/section/chart/chart.component';
 import { AboutComponent } from './page/section/about/about.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { BindableComponent } from './base/base';
 
 @NgModule({
 	imports: [
@@ -35,6 +36,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 	],
 	exports: [WorkspaceComponent],
 	declarations: [
+		BindableComponent,
 		WorkspaceComponent,
 		NavbarComponent,
 		PageComponent,

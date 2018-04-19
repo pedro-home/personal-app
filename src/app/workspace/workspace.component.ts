@@ -14,12 +14,12 @@ import { MatIconRegistry } from '@angular/material';
 
 export class WorkspaceComponent implements AfterContentInit {
 
-	private navbar: Model;
-	private page: Model;
-	private footer: Model;
-	private loader: Model;
+	navbar: Model;
+	page: Model;
+	footer: Model;
+	loader: Model;
 
-	private loaded: boolean;
+	loaded: boolean;
 
 	constructor(private messageService: MessageService, private iconRegistry: MatIconRegistry) {
 		this.loaded = false;

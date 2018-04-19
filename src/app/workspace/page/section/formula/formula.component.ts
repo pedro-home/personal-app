@@ -6,9 +6,6 @@ import { BindableComponent } from '../../../base/base';
 	templateUrl: './formula.component.html',
 	styleUrls: ['./formula.component.scss']
 })
-export class FormulaComponent extends BindableComponent implements OnInit {
+export class FormulaComponent extends BindableComponent {
 
-	ngOnInit() {
-
-	}
 }
