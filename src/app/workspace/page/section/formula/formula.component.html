@@ -1,4 +1,4 @@
-<div class="formula-container" fxLayout="row" fxLayoutAlign="center" fxLayoutGap="12px">
+<div class="formula-container" fxLayout="column" fxLayout.gt-md="row" fxLayoutAlign="center center" fxLayoutGap="12px">
 	<ng-container *ngFor="let variable of model.data['variables']; index as i; last as isLast">
 		<div class="formula-variable"> 
 			<mat-icon fontSet="fas" fontIcon="fa-{{variable.icon}}"></mat-icon>

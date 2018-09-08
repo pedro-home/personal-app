@@ -9,4 +9,18 @@
             clip-path: circle(50%);
         }
     }
+
+    .profile-container {
+        text-align: center;
+    }
+
+    @at-root {
+        @media screen and (min-width: 960px) {
+            :host {
+                .profile-container {
+                    text-align: left;
+                }
+            }
+        }
+    }
 }

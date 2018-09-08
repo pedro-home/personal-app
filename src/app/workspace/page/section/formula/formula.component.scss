@@ -5,7 +5,6 @@
     cursor: default;
     display: block;
     text-align: center;
-    padding-bottom: 8rem;
 
     .formula-operator {
         span {
@@ -14,35 +13,90 @@
     }
 
     .formula-variable {
-        width: 10vw;
-        height: $icon-size-l;
-
         > .mat-icon {
-            transition: transform $animation-duration;
+            transition: all $animation-duration;
             @include add-icon-size($icon-size-l);
         }
 
 
         .variable-description {
-            transition: transform $animation-duration;
+            > * {
+                margin-bottom: 0;
 
-            > :last-child {
-                transition: opacity $animation-duration;
-                opacity: 0;
+                &:last-child {
+                    animation: hideDescription $animation-duration forwards;
+                }
             }
         }
 
         &:hover {
             > .mat-icon {
-                transform: scale(2);
+                @include add-icon-size($icon-size-xl);
             }
 
             .variable-description {
-                transform: translateY($icon-size-l/2);
-
                 > :last-child {
-                    opacity: 1;
+                    animation: showDescription $animation-duration forwards;
                 }
+            }
+        }
+    }
+
+    @at-root {
+        @media screen and (min-width: 1280px) {
+            :host {
+                padding-bottom: 8rem;
+
+                .formula-variable {
+                    width: 10vw;
+                    height: $icon-size-l;
+                }
+            }
+        }
+
+        @keyframes showDescription {
+            0% {
+                height: 0;
+                transform: translateY(-$icon-size-l/2);
+                margin-bottom: 0;
+                opacity: 0;
+            }
+
+            1% {
+                height: auto;
+                transform: translateY(-$icon-size-l/2);
+                margin-bottom: 0;
+                opacity: 0;
+            }
+
+            100% {
+                height: auto;
+                transform: translateY(0);
+                margin-bottom: 12px;
+                opacity: 1;
+            }
+        }
+
+        @keyframes hideDescription {
+            0% {
+                height: auto;
+                transform: translateY(0);
+                margin-bottom: 12px;
+                opacity: 1;
+            }
+
+            99% {
+                height: auto;
+                transform: translateY(-$icon-size-l/2);
+                margin-bottom: 0;
+                opacity: 0;
+            }
+
+            100% {
+                height: 0;
+                transform: translateY(-$icon-size-l/2);
+                margin-bottom: 0;
+                opacity: 0;
             }
         }
     }

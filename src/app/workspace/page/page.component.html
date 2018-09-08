@@ -12,20 +12,23 @@
 
 	<app-section *ngFor="let section of sections; index as i" [model]="section.data['data']" class="{{section.data['theme']}}" [attr.id]="section.data['id']" fxLayout="column" fxLayoutAlign="center" fxLayoutGap="4rem"></app-section>
 
-	<footer id="contacts" fxLayout="row">
+	<footer id="contacts" fxLayout="column" fxLayout.gt-sm="row" fxLayoutGap="4rem" fxLayoutGap.gt-sm="1rem">
 		<div class="footer-contacts" fxLayout="column" fxLayoutAlign="center" fxLayoutGap="1rem">
-			<div *ngFor="let contact of model.data['information']['contacts']['personal']" class="footer-contact" fxLayout="row" fxLayoutAlign="strech center" fxLayoutGap="1rem">
-				<mat-icon color="primary" fontIcon="fa-{{contact.icon}}"></mat-icon>
-				<h2 class="mat-title">{{contact.text}}</h2>
+			<h1 class="mat-headline" fxHide.gt-sm>Contacts</h1>
+			<div class="contacts-container" fxLayout="column" fxLayout.gt-xs="row" fxLayout.gt-sm="column" fxLayoutAlign="center" fxLayoutGap="2rem">
+				<div *ngFor="let contact of model.data['information']['contacts']['personal']" class="footer-contact" fxLayout="column" fxLayout.gt-sm="row" fxLayoutAlign="strech center" fxLayoutGap="1rem">
+					<mat-icon color="primary" fontIcon="fa-{{contact.icon}}"></mat-icon>
+					<h2 class="mat-title">{{contact.text}}</h2>
+				</div>
 			</div>
 		</div>
 		<div class="footer-application" fxLayout="column" fxLayoutAlign="center" fxLayoutGap="1rem">
 			<div class="application-container mat-body-2">
-				<h1 class="mat-headline">About the application:</h1>
+				<h1 class="mat-headline">Application</h1>
 				<p>The current version of Personal App is {{version}} - this is NOT the final version! There is still a lot of features and improvements that will be implemented in a near future.</p>
 				<p>Personal App was made with <mat-icon color="primary" class="mat-icon-caption" style="vertical-align: text-bottom;" fontIcon="fa-heart"></mat-icon> by {{author}} for YOU.</p>
 			</div>
-			<div class="social-container" fxLayout="row" fxAlign="center" fxLayoutGap="1rem">
+			<div class="social-container" fxLayout="row" fxLayoutAlign="center" fxLayoutAlign.gt-sm="flex-end" fxAlign="center" fxLayoutGap="1rem">
 				<div *ngFor="let social of model.data['information']['contacts']['social']">
 					<a href="{{social.url}}" mat-mini-fab color="primary">
 						<mat-icon fontSet="fab" fontIcon="fa-{{social.name}}"></mat-icon>
