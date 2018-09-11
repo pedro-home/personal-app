@@ -3,10 +3,5 @@
 
 @mixin about-theme($theme) {
     $accent: map-get($theme, accent);
-    
-    app-about {
-        .profile-image {
-            border: 1px solid mat-color($accent);
-        }
-    }
+
 }

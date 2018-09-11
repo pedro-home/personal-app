@@ -1,53 +1,137 @@
 {
-    "bars":
+    "chart":
     [
         {
-            "name": "JAVA & C#",
-            "value": 70
+            "name": "Back-end programming languages",
+            "bars":
+            [
+                {
+                    "name": "Java",
+                    "value": 70
+                },
+                {
+                    "name": "C#",
+                    "value": 65
+                },
+                {
+                    "name": "NodeJS",
+                    "value": 40
+                }
+            ]
         },
         {
-            "name": "TYPESCRIPT, ECMASCRIPT & JAVASCRIPT",
-            "value": 75
+            "name": "Front-end programming languages",
+            "bars":
+            [
+                {
+                    "name": "Typescript",
+                    "value": 70
+                },
+                {
+                    "name": "Ecmascript",
+                    "value": 65
+                },
+                {
+                    "name": "Javascript",
+                    "value": 80
+                },
+                {
+                    "name": "HTML5",
+                    "value": 70
+                },
+                {
+                    "name": "SCSS & CSS",
+                    "value": 80
+                }
+            ]
         },
         {
-            "name": "HTML5",
-            "value": 70
+            "name": "Front-end frameworks & libraries",
+            "bars":
+            [
+                {
+                    "name": "Angular 2+",
+                    "value": 65
+                },
+                {
+                    "name": "Angular Material",
+                    "value": 75
+                },
+                {
+                    "name": "JQuery",
+                    "value": 90
+                },
+                {
+                    "name": "JQuery UI",
+                    "value": 85
+                },
+                {
+                    "name": "React",
+                    "value": 35
+                },
+                {
+                    "name": "Bootstrap",
+                    "value": 40
+                }
+            ]
         },
         {
-            "name": "SCSS & CSS",
-            "value": 80
+            "name": "Editors",
+            "bars":
+            [
+                {
+                    "name": "Visual Studio",
+                    "value": 65
+                },
+                {
+                    "name": "VS Code",
+                    "value": 90
+                },
+                {
+                    "name": "Ecplise",
+                    "value": 80
+                },
+                {
+                    "name": "Atom",
+                    "value": 75
+                },
+                {
+                    "name": "Notepad++",
+                    "value": 80
+                }
+            ]
         },
         {
-            "name": "NODEJS",
-            "value": 60
+            "name": "Git",
+            "bars":
+            [
+                {
+                    "name": "SmartGit",
+                    "value": 90
+                },
+                {
+                    "name": "Github",
+                    "value": 80
+                },
+                {
+                    "name": "SourceTree",
+                    "value": 65
+                }
+            ]
         },
         {
-            "name": "ANGULAR 2+, ANGULAR CLI & ANGULAR MATERIAL",
-            "value": 65
-        },
-        {
-            "name": "JQUERY & JQUERY UI",
-            "value": 90
-        },
-        {
-            "name": "REACT",
-            "value": 20
-        },
-        {
-            "name": "BOOTSTRAP",
-            "value": 40
-        },
-        {
-            "name": "VS, VSCODE, ECLIPSE & NETBEANS",
-            "value": 80
-        },
-        {
-            "name": "SMARTGIT, GITHUB & SOURCETREE",
-            "value": 75
-        },
-        {
-            "name": "CONFLUENCE & JIRA",
-            "value": 70
+            "name": "Documentation & report",
+            "bars":
+            [
+                {
+                    "name": "Confluence",
+                    "value": 80
+                },
+                {
+                    "name": "JIRA",
+                    "value": 85
+                }
+            ]
         }
     ]
 }

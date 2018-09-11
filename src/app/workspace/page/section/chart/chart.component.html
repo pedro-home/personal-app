@@ -1,7 +1,12 @@
-<div *ngFor="let bar of model.data['bars']; index as i;" class="chart-bar" [style.height.px]="(size/100)+(distance)" fxLayout="row" fxLayoutAlign="stretch center" fxLayoutGap="10px">
-	<p class="chart-name mat-body-2">{{bar.name}}</p>
-	<svg [attr.width]="(size*bar.value)/100" [attr.height]="size/100">
-		<svg:rect [attr.height]="size/100" [attr.width]="(size*bar.value)/100" />
-	</svg>
-	<h4 class="chart-value mat-subheading-1">{{bar.value}}%</h4>
+<div *ngFor="let group of model.data['chart']" class="chart-group" fxLayout="column" fxLayoutAlign="flex-start" fxLayoutGap="1vw">
+	<h2 class="group-name mat-title">{{group.name}}</h2>
+	<div *ngFor="let bar of group['bars']" class="group-bar" fxLayout="row" fxLayoutAlign="stretch center" fxLayoutGap="10px">
+		<p class="bar-name mat-body-1" fxFlex="none">{{bar.name}}</p>
+		<div class="bar-value" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="6px">
+			<svg [style.width.%]="bar.value">
+				<svg:rect />
+			</svg>
+			<p class="value-text mat-body-1">{{bar.value}}%</p>
+		</div>
+	</div>
 </div>

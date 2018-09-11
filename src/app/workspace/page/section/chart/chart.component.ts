@@ -8,13 +8,4 @@ import { BindableComponent } from '../../../base/base';
 })
 export class ChartComponent extends BindableComponent {
 
-	size: number;
-	distance: number;
-
-	constructor() {
-		super();
-
-		this.size = 1000;
-		this.distance = 25;
-	}
 }

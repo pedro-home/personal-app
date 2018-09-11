@@ -1,12 +1,33 @@
 :host {
-    display: inline-block;
+    display: block;
 
-    .chart-name, .chart-value {
+    .chart-group {
+        margin-bottom: 16px;
+
+        > .mat-title {
+            text-transform: uppercase;
+            letter-spacing: 4px;
+        }
+    }
+
+    .bar-name, .bar-value .value-text {
         margin: 0;
     }
 
-    .chart-name {
+    .bar-name {
         width: 20vw;
         text-align: end;
+    }
+
+    .bar-value {
+        width: 100%;
+
+        svg {
+            height: 1vh;
+            
+            > rect {
+                width: 100%;
+            }
+        }
     }
 }

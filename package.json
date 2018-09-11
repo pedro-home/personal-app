@@ -13,6 +13,7 @@
     "type": "git",
     "url": "personal-app"
   },
+  "version": "1.0.0",
   "author": "Pedro Gomes",
   "private": true,
   "dependencies": {
