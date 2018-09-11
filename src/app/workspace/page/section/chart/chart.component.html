@@ -1,5 +1,7 @@
-<div *ngFor="let group of model.data['chart']" class="chart-group" fxLayout="column" fxLayoutAlign="flex-start" fxLayoutGap="1vw">
-	<h2 class="group-name mat-title">{{group.name}}</h2>
+<div *ngFor="let group of model.data['chart']" class="chart-group" fxLayout="column" fxLayoutAlign="flex-start" fxLayoutGap="8px">
+	<div class="group-name">
+		<h3 class="group-name mat-subheading-2">{{group.name}}</h3>
+	</div>
 	<div *ngFor="let bar of group['bars']" class="group-bar" fxLayout="row" fxLayoutAlign="stretch center" fxLayoutGap="10px">
 		<p class="bar-name mat-body-1" fxFlex="none">{{bar.name}}</p>
 		<div class="bar-value" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="6px">

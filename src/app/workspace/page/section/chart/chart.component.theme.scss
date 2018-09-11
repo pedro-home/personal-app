@@ -2,10 +2,25 @@
 
 @mixin chart-theme($theme) {
     $primary: map-get($theme, primary);
+    $accent: map-get($theme, accent);
 
     app-chart {
-        svg > rect {
-            fill: mat-color($primary);
+        .group-name {
+            color: mat-color($accent, 0.8);
+        }
+
+        .bar-name {
+            color: mat-color($accent);
+        }
+
+        .bar-value {
+            .value-text {
+                color: mat-color($primary);
+            }
+
+            svg > rect {
+                fill: mat-color($primary);
+            }
         }
     }
 }

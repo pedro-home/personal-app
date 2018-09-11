@@ -2,6 +2,9 @@
 
 @mixin history-theme($theme) {
     $primary: map-get($theme, primary);
+    $accent: map-get($theme, accent);
+    $background: map-get($theme, background);
+
 
     app-history {
         svg > {
@@ -17,6 +20,14 @@
         .history-details {
             > .history-year {
                 color: mat-color($primary);
+            }
+
+            > .history-title {
+                color: mat-color($accent, 0.8);
+            }
+            
+            > .history-description {
+                background-color: map-get($background, 'background');
             }
         }
     }
